@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../assets/css/main/app-dark.css" />
     <link
       rel="shortcut icon"
-      href="../assets/images/logo/logo.png"
+      href="../../assets/images/logo/logo.png"
       type="image/png"
     />
 
@@ -29,6 +29,11 @@
     <link
       rel="stylesheet"
       href="../../assets/css/pages/simple-datatables.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
     />
   </head>
 
@@ -249,6 +254,21 @@
                 <div class="col-12 col-md-6 order-md-1 order-last">
                   <h3>Laporan Absen</h3>
                 </div>
+                <div class="col-12 col-md-6 order-md-2 order-first">
+                  <nav
+                    aria-label="breadcrumb"
+                    class="breadcrumb-header float-start float-lg-end"
+                  >
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="../index.html">Dashboard</a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                        Laporan Absen
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
               </div>
             </div>
             <section class="row">
@@ -256,61 +276,127 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="card">
+                      <div class="card-header">
+                        <div class="row">
+                          <div class="col-sm-5">
+                            <a
+                              href="#"
+                              class="btn btn-md btn-primary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#laporanabsenForm"
+                              >Cetak Laporan</a
+                            >
+                          </div>
+                        </div>
+                      </div>
                       <div class="card-body">
                         <table class="table table-striped" id="table1">
                           <thead>
                             <tr>
-                              <th>Name</th>
-                              <th>Email</th>
-                              <th>Phone</th>
-                              <th>City</th>
+                              <th>No</th>
+                              <th>Nama</th>
+                              <th>Jabatan</th>
+                              <th>Jenis Absen</th>
+                              <th>Waktu Absen</th>
+                              <th>Tanggal Absen</th>
                               <th>Status</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td>Graiden</td>
-                              <td>vehicula.aliquet@semconsequat.co.uk</td>
-                              <td>076 4820 8838</td>
-                              <td>Offenburg</td>
+                              <td>1.</td>
+                              <td>Ihsan FJ</td>
+                              <td>Tenaga Kontrak</td>
+                              <td>Masuk</td>
+                              <td>09:00</td>
+                              <td>01-01-2023</td>
                               <td>
-                                <span class="badge bg-success">Active</span>
+                                <span class="badge bg-success"
+                                  >Tepat Waktu</span
+                                >
                               </td>
                             </tr>
                             <tr>
-                              <td>Dale</td>
-                              <td>fringilla.euismod.enim@quam.ca</td>
-                              <td>0500 527693</td>
-                              <td>New Quay</td>
+                              <td>2.</td>
+                              <td>Dani Kaharu</td>
+                              <td>Tenaga Kontrak</td>
+                              <td>Masuk</td>
+                              <td>09:00</td>
+                              <td>01-01-2023</td>
                               <td>
-                                <span class="badge bg-success">Active</span>
+                                <span class="badge bg-success"
+                                  >Tepat Waktu</span
+                                >
                               </td>
                             </tr>
                             <tr>
-                              <td>Nathaniel</td>
-                              <td>mi.Duis@diam.edu</td>
-                              <td>(012165) 76278</td>
-                              <td>Grumo Appula</td>
+                              <td>3.</td>
+                              <td>Ihsan FJ</td>
+                              <td>Tenaga Kontrak</td>
+                              <td>Pulang</td>
+                              <td>16:00</td>
+                              <td>01-01-2023</td>
                               <td>
-                                <span class="badge bg-danger">Inactive</span>
+                                <span class="badge bg-success"
+                                  >Sesuai Waktu</span
+                                >
                               </td>
                             </tr>
                             <tr>
-                              <td>Darius</td>
-                              <td>velit@nec.com</td>
-                              <td>0309 690 7871</td>
-                              <td>Ways</td>
+                              <td>4.</td>
+                              <td>Dani Kaharu</td>
+                              <td>Tenaga Kontrak</td>
+                              <td>Pulang</td>
+                              <td>19:00</td>
+                              <td>01-01-2023</td>
                               <td>
-                                <span class="badge bg-success">Active</span>
+                                <span class="badge bg-primary">Lembur</span>
                               </td>
                             </tr>
                             <tr>
-                              <td>Oleg</td>
-                              <td>rhoncus.id@Aliquamauctorvelit.net</td>
-                              <td>0500 441046</td>
-                              <td>Rossignol</td>
+                              <td>5.</td>
+                              <td>Azwar</td>
+                              <td>Tenaga Kontrak</td>
+                              <td>Datang</td>
+                              <td>12:00</td>
+                              <td>01-01-2023</td>
                               <td>
-                                <span class="badge bg-success">Active</span>
+                                <span class="badge bg-warning">Terlambat</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>6.</td>
+                              <td>Azwar</td>
+                              <td>Tenaga Kontrak</td>
+                              <td>Pulang</td>
+                              <td>14:00</td>
+                              <td>01-01-2023</td>
+                              <td>
+                                <span class="badge bg-warning"
+                                  >Cepat Pulang</span
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>7.</td>
+                              <td>Salman</td>
+                              <td>Tenaga Kontrak</td>
+                              <td>Datang</td>
+                              <td>13:00</td>
+                              <td>01-01-2023</td>
+                              <td>
+                                <span class="badge bg-danger">Tidak Masuk</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>8.</td>
+                              <td>Azwar</td>
+                              <td>Tenaga Kontrak</td>
+                              <td>Pulang</td>
+                              <td>14:00</td>
+                              <td>01-01-2023</td>
+                              <td>
+                                <span class="badge bg-danger">Tidak Masuk</span>
                               </td>
                             </tr>
                           </tbody>
@@ -342,8 +428,82 @@
         </div>
       </div>
     </div>
+
+    <!-- awal modal filter cetak laporan -->
+    <div
+      class="modal fade text-left"
+      id="laporanabsenForm"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel33"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel33">
+              Cetak Laporan Absen
+            </h4>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i data-feather="x"></i>
+            </button>
+          </div>
+          <form action="#" class="form form-vertical">
+            <div class="modal-body">
+              <div class="form-body">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="tanggal_awal_pengajuan">Tanggal Awal</label>
+                      <input
+                        type="text"
+                        id="tngl_pengajuan_awal"
+                        class="form-control"
+                        name="tanggal_awal_pengajuan"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="tanggal_akhir_pengajuan">Tanggal Akhir</label>
+                      <input
+                        type="text"
+                        id="tngl_pengajuan_akhir"
+                        class="form-control"
+                        name="tanggal_akhir_pengajuan"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button
+                      type="submit"
+                      id="toastSuksesEditData"
+                      class="btn btn-primary me-1 mb-1"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- akhir modal filter cetak laporan -->
+
     <script src="../../assets/js/bootstrap.js"></script>
     <script src="../../assets/js/app.js"></script>
+
+    <script src="../../assets/extensions/jquery/jquery.min.js"></script>
 
     <!-- Need: Apexcharts -->
     <script src="../../assets/extensions/dayjs/dayjs.min.js"></script>
@@ -352,5 +512,15 @@
     <script src="../../assets/js/pages/dashboard.js"></script>
     <script src="../../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
     <script src="../../assets/js/pages/simple-datatables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script>
+      $("#tngl_pengajuan_awal").datepicker({
+        format: "dd-mm-yyyy",
+      });
+      $("#tngl_pengajuan_akhir").datepicker({
+        format: "dd-mm-yyyy",
+      });
+    </script>
   </body>
 </html>
