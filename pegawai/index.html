@@ -212,78 +212,326 @@
           <div class="page-heading">
             <div class="page-title">
               <div class="container">
-                <div class="col-12 col-md-6 order-md-1 order-last mb-3">
-                  <h3>Menu Absensi</h3>
+                <div class="col-12 col-md-6 order-md-1 order-last mb-2">
+                  <h4>Menu Absensi</h4>
                 </div>
               </div>
             </div>
             <section class="section">
-              <div class="col-12 col-lg-12">
-                <div class="row mb-4">
-                  <div class="col-xl-3 col-md-3 col-sm-3 mb-2">
-                    <a href="#" class="btn rounded-pill btn-lg btn-success"
-                      >Absen Masuk</a
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-3 col-sm-3 mb-2">
-                    <a href="#" class="btn rounded-pill btn-lg btn-primary"
-                      >Absen Pulang</a
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-3 col-sm-3 mb-2">
-                    <a href="#" class="btn rounded-pill btn-lg btn-warning"
-                      >Absen Penugasan</a
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-3 col-sm-3 mb-2">
-                    <a href="#" class="btn rounded-pill btn-lg btn-danger"
-                      >Pengajuan</a
-                    >
+              <div class="row">
+                <div class="col-6 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-body px-3 py-3">
+                      <div class="row">
+                        <h6 class="text-muted font-semibold text-center">
+                          Absen Masuk
+                        </h6>
+                        <h5 class="font-extrabold mb-0 text-center">
+                          08:01:00
+                        </h5>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-12">
-                    <div class="card">
-                      <div class="card-header">
-                        <h4>Statistik Absensi</h4>
-                      </div>
-                      <div class="card-body">
-                        <div id="barPegawai"></div>
+                <div class="col-6 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-body px-3 py-3">
+                      <div class="row">
+                        <h6 class="text-muted font-semibold text-center">
+                          Absen Pulang
+                        </h6>
+                        <h5 class="font-extrabold mb-0 text-center">
+                          Belum Absen
+                        </h5>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
-          </div>
-
-          <footer>
-            <div class="footer clearfix mb-0 text-muted">
-              <div class="float-start">
-                <p>2021 &copy; Mazer</p>
+              <div class="row mb-4">
+                <div class="col-xl-12 col-md-12 col-sm-12">
+                  <button
+                    href="#"
+                    class="btn rounded-pill btn-md btn-primary mb-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#absenmasukpulangForm"
+                  >
+                    Absen Masuk
+                  </button>
+                  <button
+                    href="#"
+                    class="btn rounded-pill btn-md btn-primary mb-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#absenmasukpulangForm"
+                  >
+                    Absen Pulang
+                  </button>
+                  <button
+                    href="#"
+                    class="btn rounded-pill btn-ms btn-secondary mb-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#absenpenugasanmasukpulangForm"
+                  >
+                    Penugasan Masuk
+                  </button>
+                  <button
+                    href="#"
+                    class="btn rounded-pill btn-ms btn-secondary mb-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#absenpenugasanmasukpulangForm"
+                  >
+                    Penugasan Pulang
+                  </button>
+                  <button
+                    href="#"
+                    class="btn rounded-pill btn-md btn-warning mb-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#buatpengajuanForm"
+                  >
+                    Pengajuan
+                  </button>
+                </div>
               </div>
-              <div class="float-end">
-                <p>
-                  Crafted with
-                  <span class="text-danger"
-                    ><i class="bi bi-heart-fill icon-mid"></i
-                  ></span>
-                  by <a href="https://ahmadsaugi.com">Saugi</a>
-                </p>
+            </section>
+            <div class="page-title">
+              <div class="container">
+                <div class="col-12 col-md-6 order-md-1 order-last mb-3">
+                  <h4>Info Absensi {Bulan} {Tahun}</h4>
+                </div>
               </div>
             </div>
-          </footer>
+            <div class="row">
+              <div class="col-6 col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body px-4 py-4-5">
+                    <div class="row">
+                      <div
+                        class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start"
+                      >
+                        <div class="stats-icon purple mb-2">
+                          <i class="icon dripicons dripicons-enter"></i>
+                        </div>
+                      </div>
+                      <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                        <h6 class="text-muted font-semibold">Hadir</h6>
+                        <h6 class="font-extrabold mb-0">15 Hari</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body px-4 py-4-5">
+                    <div class="row">
+                      <div
+                        class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start"
+                      >
+                        <div class="stats-icon blue mb-2">
+                          <i class="iconly-boldProfile"></i>
+                        </div>
+                      </div>
+                      <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                        <h6 class="text-muted font-semibold">Izin</h6>
+                        <h6 class="font-extrabold mb-0">1 Hari</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body px-4 py-4-5">
+                    <div class="row">
+                      <div
+                        class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start"
+                      >
+                        <div class="stats-icon green mb-2">
+                          <i class="icon dripicons dripicons-medical"></i>
+                        </div>
+                      </div>
+                      <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                        <h6 class="text-muted font-semibold">Sakit</h6>
+                        <h6 class="font-extrabold mb-0">2 Hari</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body px-4 py-4-5">
+                    <div class="row">
+                      <div
+                        class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start"
+                      >
+                        <div class="stats-icon red mb-2">
+                          <i class="icon dripicons dripicons-blog"></i>
+                        </div>
+                      </div>
+                      <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                        <h6 class="text-muted font-semibold">Cuti</h6>
+                        <h6 class="font-extrabold mb-0">2 Hari</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- awal buat modal form pengajuan  -->
+    <!--awal modal Absen Masuk & Pulang -->
+    <div
+      class="modal fade text-left"
+      id="absenmasukpulangForm"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="absenmasukpulangForm"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="absenmasukpulangForm">
+              Absen {Masuk/Pulang}
+            </h4>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i data-feather="x"></i>
+            </button>
+          </div>
+          <form action="#" class="form form-vertical">
+            <div class="modal-body">
+              <div class="form-body">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label><b>Tanggal Absen : {13 Maret 2023}</b></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label><b>Jam Absen : {08:00:33}</b></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label><b>Lat-Long : {-7.131313,103.133333}</b></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <p class="text-center">
+                      <code
+                        >{Anda tidak dalam lokasi absen/ Anda berada dilokasi
+                        absen}</code
+                      >
+                    </p>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <video autoplay playsinline></video>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button
+                      type="submit"
+                      id="alertAbsen"
+                      class="btn icon icon-left btn-primary me-1 mb-1"
+                    >
+                      <i class="icon dripicons dripicons-camera"></i> Absen
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- akhir modal Absen Masuk & Pulang -->
+
+    <!--awal modal Absen Penugasan Masuk & Pulang -->
+    <div
+      class="modal fade text-left"
+      id="absenpenugasanmasukpulangForm"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="absenpenugasanmasukpulangForm"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="absenmasukpulangForm">
+              Absen Penugasan {Masuk/Pulang}
+            </h4>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i data-feather="x"></i>
+            </button>
+          </div>
+          <form action="#" class="form form-vertical">
+            <div class="modal-body">
+              <div class="form-body">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label><b>Tanggal Absen : {13 Maret 2023}</b></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label><b>Jam Absen : {08:00:33}</b></label>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-group">
+                      <video autoplay playsinline></video>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button
+                      type="submit"
+                      id="alertAbsen"
+                      class="btn icon icon-left btn-primary me-1 mb-1"
+                    >
+                      <i class="icon dripicons dripicons-camera"></i> Absen
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- akhir modal Absen Penugasan Masuk & Pulang -->
+
+    <!-- awal modal form pengajuan  -->
     <div
       class="modal fade text-left"
       id="buatpengajuanForm"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="myModalLabel33"
+      aria-labelledby="buatpengajuanForm"
       aria-hidden="true"
     >
       <div
@@ -332,7 +580,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="file_pengajuan">File Pengajuan</label>
+                      <label for="file_pengajuan">Surat Pengajuan</label>
                       <input
                         class="form-control"
                         type="file"
@@ -382,112 +630,7 @@
         </div>
       </div>
     </div>
-    <!--awal modal proses approval pengajuan Cuti -->
-    <div
-      class="modal fade text-left"
-      id="prosesapprovalizinForm"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myModalLabel33"
-      aria-hidden="true"
-    >
-      <div
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-        role="document"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel33">
-              Form Proses Pengajuan Cuti
-            </h4>
-            <button
-              type="button"
-              class="close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            >
-              <i data-feather="x"></i>
-            </button>
-          </div>
-          <form action="#" class="form form-vertical">
-            <div class="modal-body">
-              <div class="form-body">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="nama_pegawai"><b>Nama Pegawai</b></label>
-                      <p>Azwar</p>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="keterangan_pengajuan"
-                        ><b>Keterangan Pengajuan Cuti</b></label
-                      >
-                      <p class="text-justify">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        A cupiditate dolor vel quasi cumque, odio,
-                        exercitationem voluptate dolorum iure amet porro ab quae
-                        explicabo corrupti at itaque voluptatem ducimus tempora.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="file_pengajuan"><b>File Pengajuan</b></label>
-                      <p>
-                        <a href="#">link_file_pengajuan.pdf</a>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="tanggal_awal_pengajuan"
-                        ><b>Tanggal Mulai Pengajuan</b></label
-                      >
-                      <p>10-12-2023</p>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="tanggal_akhir_pengajuan"
-                        ><b>Tanggal Akhir Pengajuan</b></label
-                      >
-                      <p>16-01-2023</p>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="tanggal_akhir_pengajuan"
-                        ><b>Status Persetujuan</b></label
-                      >
-                      <fieldset class="form-group">
-                        <select class="form-select" id="select_status">
-                          <option>Belum Disetujui</option>
-                          <option>Ditolak</option>
-                          <option>Belum Disetujui</option>
-                        </select>
-                      </fieldset>
-                    </div>
-                  </div>
-                  <div class="col-12 d-flex justify-content-end">
-                    <button
-                      type="submit"
-                      id="alertApproval"
-                      class="btn btn-primary me-1 mb-1"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- akhir modal proses approval pengajuan Cuti -->
-    
+    <!-- akhir modal form pengajuan  -->
 
     <script src="../assets/js/bootstrap.js"></script>
     <script src="../assets/js/app.js"></script>
@@ -524,6 +667,25 @@
             backgroundColor: "#4fbe87",
           }).showToast();
         });
+      var constraints = {
+        video: true,
+      };
+
+      var video = document.querySelector("video");
+
+      function handleSuccess(stream) {
+        window.stream = stream; // only to make stream available to console
+        video.srcObject = stream;
+      }
+
+      function handleError(error) {
+        console.log("getUserMedia error: ", error);
+      }
+
+      navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then(handleSuccess)
+        .catch(handleError);
     </script>
   </body>
 </html>
