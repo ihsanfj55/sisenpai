@@ -3,36 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pengajuan Cuti - Sisenpai</title>
+    <title>Pengajuan - Sisenpai</title>
 
-    <link rel="stylesheet" href="../../assets/css/main/app.css" />
-    <link rel="stylesheet" href="../../assets/css/main/app-dark.css" />
-
+    <link rel="stylesheet" href="../assets/css/main/app.css" />
+    <link rel="stylesheet" href="../assets/css/main/app-dark.css" />
     <link
       rel="shortcut icon"
-      href="../../assets/images/logo/logo.png"
+      href="../assets/images/logo/logo.png"
       type="image/png"
     />
-
-    <link rel="stylesheet" href="../../assets/css/pages/fontawesome.css" />
-
+    <link rel="stylesheet" href="../assets/css/pages/fontawesome.css" />
     <link
       rel="stylesheet"
-      href="../../assets/extensions/simple-datatables/style.css"
+      href="../assets/extensions/simple-datatables/style.css"
+    />
+    <link rel="stylesheet" href="../assets/css/pages/simple-datatables.css" />
+
+    <link rel="stylesheet" href="../assets/css/shared/iconly.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/extensions/@icon/dripicons/dripicons.css"
     />
     <link
       rel="stylesheet"
-      href="../../assets/css/pages/simple-datatables.css"
-    />
-
-    <link rel="stylesheet" href="../../assets/css/shared/iconly.css" />
-    <link
-      rel="stylesheet"
-      href="../../assets/extensions/@icon/dripicons/dripicons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="../../assets/extensions/@fortawesome/fontawesome-free/css/all.min.css"
+      href="../assets/extensions/@fortawesome/fontawesome-free/css/all.min.css"
     />
     <link
       rel="stylesheet"
@@ -41,12 +35,12 @@
 
     <link
       rel="stylesheet"
-      href="../../assets/extensions/sweetalert2/sweetalert2.min.css"
+      href="../assets/extensions/sweetalert2/sweetalert2.min.css"
     />
 
     <link
       rel="stylesheet"
-      href="../../assets/extensions/toastify-js/src/toastify.css"
+      href="../assets/extensions/toastify-js/src/toastify.css"
     />
   </head>
 
@@ -59,7 +53,7 @@
               <div class="logo">
                 <a href="index.html"
                   ><img
-                    src="../../assets/images/logo/sisenpai_logo.png"
+                    src="../assets/images/logo/sisenpai_logo.png"
                     alt="Logo"
                     srcset=""
                 /></a>
@@ -133,47 +127,21 @@
               <li class="sidebar-title">Menu</li>
 
               <li class="sidebar-item">
-                <a href="../index.html" class="sidebar-link">
+                <a href="index.html" class="sidebar-link">
                   <i class="bi bi-grid-fill"></i>
                   <span>Beranda</span>
                 </a>
               </li>
 
-              <li class="sidebar-item has-sub">
-                <a href="#" class="sidebar-link">
-                  <i class="icon dripicons dripicons-calendar"></i>
-                  <span>Absen</span>
-                </a>
-                <ul class="submenu">
-                  <li class="submenu-item">
-                    <a href="../absen/absen_datang.html">Datang</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="../absen/absen_pulang.html">Pulang</a>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="sidebar-item has-sub active">
-                <a href="#" class="sidebar-link">
+              <li class="sidebar-item active">
+                <a href="pengajuan.html" class="sidebar-link">
                   <i class="bi bi-envelope-fill"></i>
                   <span>Pengajuan</span>
                 </a>
-                <ul class="submenu">
-                  <li class="submenu-item">
-                    <a href="pengajuan_izin.html">Izin</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="pengajuan_sakit.html">Sakit</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="pengajuan_cuti.html">Cuti</a>
-                  </li>
-                </ul>
               </li>
 
               <li class="sidebar-item">
-                <a href="../riwayat_absen.html" class="sidebar-link">
+                <a href="riwayat_absen.html" class="sidebar-link">
                   <i class="icon dripicons dripicons-blog"></i>
                   <span>Riwayat Absen</span>
                 </a>
@@ -214,7 +182,7 @@
                       </div>
                       <div class="user-img d-flex align-items-center">
                         <div class="avatar avatar-md">
-                          <img src="../../assets/images/faces/1.jpg" />
+                          <img src="../assets/images/faces/1.jpg" />
                         </div>
                       </div>
                     </div>
@@ -251,7 +219,7 @@
             <div class="page-title">
               <div class="row">
                 <div class="col-12 col-md-6 mb-3 order-md-1 order-last">
-                  <h3>Pengajuan Cuti</h3>
+                  <h3>Pengajuan</h3>
                   <!-- <p class="text-subtitle text-muted">
                   Berikut Riwayat Data Absensi Anda
                 </p> -->
@@ -266,7 +234,7 @@
                         <a href="index.html">Dashboard</a>
                       </li>
                       <li class="breadcrumb-item active" aria-current="page">
-                        Pengajuan Cuti
+                        Pengajuan
                       </li>
                     </ol>
                   </nav>
@@ -276,60 +244,31 @@
 
             <!-- Basic Tables start -->
             <section class="section">
-              <!-- Button trigger for buat pengajuan cuti form modal -->
-              <button
-                type="button"
-                class="btn btn-primary mb-3"
-                data-bs-toggle="modal"
-                data-bs-target="#buatpengajuancutiForm"
-              >
-                Buat Pengajuan Cuti
-              </button>
               <div class="card">
                 <div class="card-header">
                   <div class="row">
                     <div class="col-md-4">
-                      <h6>Filter Status</h6>
+                      <h6>Filter Jenis</h6>
                       <fieldset class="form-group">
                         <select
                           class="form-select"
                           id="basicSelect"
                           name="filter_status"
                         >
-                          <option>Ditolak</option>
-                          <option>Disetujui</option>
-                          <option>Diproses</option>
-                          <option>Dibatalkan</option>
+                          <option>Izin</option>
+                          <option>Cuti</option>
+                          <option>Sakit</option>
                         </select>
                       </fieldset>
                     </div>
                     <div class="col-md-4">
-                      <h6>Filter Bulan</h6>
-                      <fieldset class="form-group">
-                        <select
-                          class="form-select"
-                          id="basicSelect"
-                          name="filter_bulan"
-                        >
-                          <option>Januari</option>
-                          <option>Februari</option>
-                          <option>Maret</option>
-                        </select>
-                      </fieldset>
-                    </div>
-                    <div class="col-md-4">
-                      <h6>Filter Tahun</h6>
-                      <fieldset class="form-group">
-                        <select
-                          class="form-select"
-                          id="basicSelect"
-                          name="filter_tahun"
-                        >
-                          <option>2022</option>
-                          <option>2023</option>
-                          <option>2024</option>
-                        </select>
-                      </fieldset>
+                      <h6>Filter Tanggal</h6>
+                      <input
+                        type="text"
+                        id="tngl_filter"
+                        class="form-control"
+                        name="tanggal_awal_pengajuan"
+                      />
                     </div>
                   </div>
                 </div>
@@ -338,6 +277,7 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Jenis Pengajuan</th>
                         <th>Keterangan</th>
                         <th>Tanggal Awal</th>
                         <th>Tanggal Akhir</th>
@@ -348,6 +288,7 @@
                     <tbody>
                       <tr>
                         <td>1</td>
+                        <td>Cuti</td>
                         <td>Cuti Melahirkan</td>
                         <td>11-01-2023</td>
                         <td>11-01-2023</td>
@@ -360,7 +301,8 @@
                       </tr>
                       <tr>
                         <td>2</td>
-                        <td>Cuti Pulang Kampung</td>
+                        <td>Izin</td>
+                        <td>Izin Pulang Kampung</td>
                         <td>10-12-2022</td>
                         <td>16-01-2023</td>
                         <td>
@@ -371,14 +313,14 @@
                             href="#"
                             class="btn btn-sm btn-primary"
                             data-bs-toggle="modal"
-                            data-bs-target="#detailpengajuancutiForm"
+                            data-bs-target="#detailpengajuanForm"
                             >Detail</a
                           >
                           <a
                             href="#"
                             class="btn btn-sm btn-warning"
                             data-bs-toggle="modal"
-                            data-bs-target="#editpengajuancutiForm"
+                            data-bs-target="#editpengajuanForm"
                             >Edit</a
                           >
                           <button id="alertBatal" class="btn btn-sm btn-danger">
@@ -388,23 +330,12 @@
                       </tr>
                       <tr>
                         <td>3</td>
-                        <td>Cuti Lorem ipsum dolor sit amet</td>
+                        <td>Sakit</td>
+                        <td>Sakit Gigi anjuran dokter rawat rumah 2 hari</td>
                         <td>21-01-2023</td>
                         <td>23-01-2023</td>
                         <td>
                           <span class="badge bg-success">Disetujui</span>
-                        </td>
-                        <td>
-                          <a href="#" class="btn btn-sm btn-primary">Detail</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Cuti Kawin</td>
-                        <td>23-03-2023</td>
-                        <td>28-02-2023</td>
-                        <td>
-                          <span class="badge bg-danger">Dibatalkan</span>
                         </td>
                         <td>
                           <a href="#" class="btn btn-sm btn-primary">Detail</a>
@@ -437,10 +368,10 @@
       </div>
     </div>
 
-    <!-- awal buat modal form pengajuan cuti -->
+    <!--awal edit modal form pengajuan -->
     <div
       class="modal fade text-left"
-      id="buatpengajuancutiForm"
+      id="editpengajuanForm"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel33"
@@ -452,9 +383,7 @@
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel33">
-              Form Buat Pengajuan Cuti
-            </h4>
+            <h4 class="modal-title" id="myModalLabel33">Form Edit Pengajuan</h4>
             <button
               type="button"
               class="close"
@@ -472,123 +401,10 @@
                     <div class="form-group">
                       <label for="jenis_pengajuan">Jenis Pengajuan</label>
                       <fieldset class="form-group">
-                        <select
-                          class="form-select"
-                          disabled="disabled"
-                          id="select_jenis_pengajuan"
-                        >
+                        <select class="form-select" id="select_jenis_pengajuan">
+                          <option>Izin</option>
                           <option>Cuti</option>
-                        </select>
-                      </fieldset>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="keterangan_pengajuan"
-                        >Keterangan Pengajuan</label
-                      >
-                      <textarea
-                        class="form-control"
-                        id="text_area_keterangan_pengajuan"
-                        rows="3"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="file_pengajuan">File Pengajuan</label>
-                      <input
-                        class="form-control"
-                        type="file"
-                        id="form_file_pengajuan"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="tanggal_awal_pengajuan"
-                        >Tanggal Awal Pengajuan</label
-                      >
-                      <input
-                        type="text"
-                        id="tngl_pengajuan_awal"
-                        class="form-control"
-                        name="tanggal_awal_pengajuan"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="tanggal_akhir_pengajuan"
-                        >Tanggal Akhir Pengajuan</label
-                      >
-                      <input
-                        type="text"
-                        id="tngl_pengajuan_akhir"
-                        class="form-control"
-                        name="tanggal_akhir_pengajuan"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-12 d-flex justify-content-end">
-                    <button
-                      type="submit"
-                      id="toastSuksesTambahData"
-                      class="btn btn-primary me-1 mb-1"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- akhir buat modal form pengajuan Cuti -->
-
-    <!--awal edit modal form pengajuan Cuti -->
-    <div
-      class="modal fade text-left"
-      id="editpengajuancutiForm"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myModalLabel33"
-      aria-hidden="true"
-    >
-      <div
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-        role="document"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel33">
-              Form Edit Pengajuan Cuti
-            </h4>
-            <button
-              type="button"
-              class="close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            >
-              <i data-feather="x"></i>
-            </button>
-          </div>
-          <form action="#" class="form form-vertical">
-            <div class="modal-body">
-              <div class="form-body">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="jenis_pengajuan">Jenis Pengajuan</label>
-                      <fieldset class="form-group">
-                        <select
-                          class="form-select"
-                          disabled="disabled"
-                          id="select_jenis_pengajuan"
-                        >
-                          <option>Cuti</option>
+                          <option>Sakit</option>
                         </select>
                       </fieldset>
                     </div>
@@ -657,12 +473,12 @@
         </div>
       </div>
     </div>
-    <!-- akhir edit modal form pengajuan Cuti -->
+    <!-- akhir edit modal form pengajuan -->
 
-    <!--awal detail modal form pengajuan Cuti -->
+    <!--awal detail modal form pengajuan -->
     <div
       class="modal fade text-left"
-      id="detailpengajuancutiForm"
+      id="detailpengajuanForm"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel33"
@@ -675,7 +491,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="myModalLabel33">
-              Form Detail Pengajuan Cuti
+              Form Detail Pengajuan
             </h4>
             <button
               type="button"
@@ -699,7 +515,7 @@
                         type="text"
                         class="form-control"
                         id="disabledInput"
-                        placeholder="Cuti"
+                        placeholder="Izin"
                         disabled
                       />
                     </div>
@@ -756,22 +572,22 @@
         </div>
       </div>
     </div>
-    <!-- akhir detail modal form pengajuan cuti -->
+    <!-- akhir detail modal form pengajuan -->
 
-    <script src="../../assets/js/bootstrap.js"></script>
-    <script src="../../assets/js/app.js"></script>
+    <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/app.js"></script>
 
-    <script src="../../assets/extensions/jquery/jquery.min.js"></script>
+    <script src="../assets/extensions/jquery/jquery.min.js"></script>
 
-    <script src="../../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
-    <script src="../../assets/js/pages/simple-datatables.js"></script>
+    <script src="../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="../assets/js/pages/simple-datatables.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
-    <script src="../../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
-    <script src="../../assets/extensions/toastify-js/src/toastify.js"></script>
+    <script src="../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+    <script src="../assets/extensions/toastify-js/src/toastify.js"></script>
 
     <script>
-      $("#tngl_pengajuan_awal").datepicker({
+      $("#tngl_filter").datepicker({
         format: "dd-mm-yyyy",
       });
       $("#tngl_pengajuan_akhir").datepicker({

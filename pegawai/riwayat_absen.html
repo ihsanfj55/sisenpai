@@ -27,7 +27,10 @@
       rel="stylesheet"
       href="../assets/extensions/simple-datatables/style.css"
     />
-    <link rel="stylesheet" href="../assets/css/pages/simple-datatables.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/css/pages/simple-datatables.css"
+    />
   </head>
 
   <body>
@@ -39,7 +42,7 @@
               <div class="logo">
                 <a href="index.html"
                   ><img
-                    src="../assets/images/logo/logo.svg"
+                    src="../assets/images/logo/sisenpai_logo.png"
                     alt="Logo"
                     srcset=""
                 /></a>
@@ -108,48 +111,22 @@
               </div>
             </div>
           </div>
-          <div class="sidebar-menu">
+           <div class="sidebar-menu">
             <ul class="menu">
               <li class="sidebar-title">Menu</li>
 
-              <li class="sidebar-item">
+              <li class="sidebar-item ">
                 <a href="index.html" class="sidebar-link">
                   <i class="bi bi-grid-fill"></i>
                   <span>Beranda</span>
                 </a>
               </li>
 
-              <li class="sidebar-item has-sub">
-                <a href="#" class="sidebar-link">
-                  <i class="icon dripicons dripicons-calendar"></i>
-                  <span>Absen</span>
-                </a>
-                <ul class="submenu">
-                  <li class="submenu-item">
-                    <a href="absen/absen_datang.html">Datang</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="absen/absen_pulang.html">Pulang</a>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="sidebar-item has-sub">
-                <a href="#" class="sidebar-link">
+              <li class="sidebar-item">
+                <a href="pengajuan.html" class="sidebar-link">
                   <i class="bi bi-envelope-fill"></i>
                   <span>Pengajuan</span>
                 </a>
-                <ul class="submenu">
-                  <li class="submenu-item">
-                    <a href="pengajuan/pengajuan_izin.html">Izin</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="pengajuan/pengajuan_sakit.html">Sakit</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="pengajuan/pengajuan_cuti.html">Cuti</a>
-                  </li>
-                </ul>
               </li>
 
               <li class="sidebar-item active">
@@ -194,7 +171,7 @@
                       </div>
                       <div class="user-img d-flex align-items-center">
                         <div class="avatar avatar-md">
-                          <img src="../assets/images/faces/1.jpg" />
+                          <img src="../../assets/images/faces/1.jpg" />
                         </div>
                       </div>
                     </div>
@@ -256,139 +233,16 @@
 
             <!-- Basic Tables start -->
             <section class="section">
-              <div class="card">
-                <div class="card-header">
-                  <div class="row">
-                    <div class="col-md-3">
-                      <h6>Filter Jenis Absen</h6>
-                      <fieldset class="form-group">
-                        <select class="form-select" id="filter_jenis_absen">
-                          <option>Datang</option>
-                          <option>Pulang</option>
-                        </select>
-                      </fieldset>
+              <div class="row">
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h4>Statistik Absensi</h4>
                     </div>
-                    <div class="col-md-3">
-                      <h6>Filter Status Absen</h6>
-                      <fieldset class="form-group">
-                        <select class="form-select" id="filter_status_absen">
-                          <option>Tepat Waktu</option>
-                          <option>Terlambat</option>
-                          <option>Lembur</option>
-                          <option>Cepat Pulang</option>
-                          <option>Tidak Masuk</option>
-                          <option>Sesuai Waktu</option>
-                        </select>
-                      </fieldset>
-                    </div>
-                    <div class="col-md-3">
-                      <h6>Filter Bulan</h6>
-                      <fieldset class="form-group">
-                        <select class="form-select" id="filter_bulan">
-                          <option>Januari</option>
-                          <option>Februari</option>
-                          <option>Maret</option>
-                        </select>
-                      </fieldset>
-                    </div>
-                    <div class="col-md-3">
-                      <h6>Filter Tahun</h6>
-                      <fieldset class="form-group">
-                        <select class="form-select" id="filter_tahun">
-                          <option>2022</option>
-                          <option>2023</option>
-                          <option>2024</option>
-                        </select>
-                      </fieldset>
+                    <div class="card-body">
+                      <div id="barPegawaiAbsen"></div>
                     </div>
                   </div>
-                </div>
-                <div class="card-body">
-                  <table class="table table-striped" id="table1">
-                    <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>Jenis Absen</th>
-                        <th>Waktu Absen</th>
-                        <th>Tanggal Absen</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Masuk</td>
-                        <td>08:00</td>
-                        <td>01-01-2023</td>
-                        <td>
-                          <span class="badge bg-success">Tepat Waktu</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Pulang</td>
-                        <td>20:00</td>
-                        <td>01-01-2023</td>
-                        <td>
-                          <span class="badge bg-primary">Lembur</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Masuk</td>
-                        <td>10:00</td>
-                        <td>02-01-2023</td>
-                        <td>
-                          <span class="badge bg-warning">Terlambat</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Pulang</td>
-                        <td>14:00</td>
-                        <td>02-01-2023</td>
-                        <td>
-                          <span class="badge bg-warning">Cepat Pulang</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td>Masuk</td>
-                        <td>13:00</td>
-                        <td>03-01-2023</td>
-                        <td>
-                          <span class="badge bg-danger">Tidak Masuk</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>6</td>
-                        <td>Pulang</td>
-                        <td>16:00</td>
-                        <td>03-01-2023</td>
-                        <td>
-                          <span class="badge bg-danger">Tidak Masuk</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>7</td>
-                        <td>Masuk</td>
-                        <td>08:00</td>
-                        <td>04-01-2023</td>
-                        <td>
-                          <span class="badge bg-success">Tepat Waktu</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>8</td>
-                        <td>Pulang</td>
-                        <td>16:00</td>
-                        <td>04-01-2023</td>
-                        <td>
-                          <span class="badge bg-success">Sesuai Waktu</span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
                 </div>
               </div>
             </section>

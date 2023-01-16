@@ -585,18 +585,18 @@ var barOptionsAdminKepegawaian = {
     },
   },
 };
-var barOptionsPegawai = {
+var barPegawaiAbsen = {
   series: [
     {
-      name: "Izin",
+      name: "Tempat Waktu",
       data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 22, 22, 22],
     },
     {
-      name: "Cuti",
+      name: "Terlambat",
       data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 22, 22, 22],
     },
     {
-      name: "Sakit",
+      name: "Tidak Hadir",
       data: [35, 41, 36, 26, 45, 48, 52, 53, 41, 22, 22, 22],
     },
   ],
@@ -665,9 +665,9 @@ var barAdminKepegawaian = new ApexCharts(
   document.querySelector("#barAdminKepegawaian"),
   barOptionsAdminKepegawaian
 );
-var barPegawai = new ApexCharts(
-  document.querySelector("#barPegawai"),
-  barOptionsPegawai
+var barPegawaiAbsen = new ApexCharts(
+  document.querySelector("#barPegawaiAbsen"),
+  barPegawaiAbsen
 );
 
 area.render();
@@ -676,4 +676,4 @@ candle.render();
 bar.render();
 line.render();
 barAdminKepegawaian.render();
-barPegawai.render();
+barPegawaiAbsen.render();

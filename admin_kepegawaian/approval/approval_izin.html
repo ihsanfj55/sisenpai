@@ -3,25 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Sisenpai</title>
+    <title>Approval Izin - Sisenpai</title>
 
-    <link rel="stylesheet" href="../assets/css/main/app.css" />
-    <link rel="stylesheet" href="../assets/css/main/app-dark.css" />
+    <link rel="stylesheet" href="../../assets/css/main/app.css" />
+    <link rel="stylesheet" href="../../assets/css/main/app-dark.css" />
     <link
       rel="shortcut icon"
-      href="../assets/images/logo/logo.png"
+      href="../../assets/images/logo/logo.png"
       type="image/png"
     />
 
-    <link rel="stylesheet" href="../assets/css/shared/iconly.css" />
+    <link rel="stylesheet" href="../../assets/css/shared/iconly.css" />
     <link
       rel="stylesheet"
-      href="../assets/extensions/@icon/dripicons/dripicons.css"
+      href="../../assets/extensions/@icon/dripicons/dripicons.css"
     />
     <link
       rel="stylesheet"
-      href="../assets/extensions/@fortawesome/fontawesome-free/css/all.min.css"
+      href="../../assets/extensions/@fortawesome/fontawesome-free/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="../../assets/extensions/simple-datatables/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/css/pages/simple-datatables.css"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
@@ -29,12 +38,7 @@
 
     <link
       rel="stylesheet"
-      href="../assets/extensions/sweetalert2/sweetalert2.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="../assets/extensions/toastify-js/src/toastify.css"
+      href="../../assets/extensions/sweetalert2/sweetalert2.min.css"
     />
   </head>
 
@@ -47,7 +51,7 @@
               <div class="logo">
                 <a href="index.html"
                   ><img
-                    src="../assets/images/logo/sisenpai_logo.png"
+                    src="../../assets/images/logo/logo.svg"
                     alt="Logo"
                     srcset=""
                 /></a>
@@ -120,24 +124,62 @@
             <ul class="menu">
               <li class="sidebar-title">Menu</li>
 
-              <li class="sidebar-item active">
-                <a href="index.html" class="sidebar-link">
+              <li class="sidebar-item">
+                <a href="../index.html" class="sidebar-link">
                   <i class="bi bi-grid-fill"></i>
                   <span>Beranda</span>
                 </a>
               </li>
 
               <li class="sidebar-item">
-                <a href="pengajuan.html" class="sidebar-link">
-                  <i class="bi bi-envelope-fill"></i>
-                  <span>Pengajuan</span>
+                <a href="../absen_harian.html" class="sidebar-link">
+                  <i class="icon dripicons dripicons-document-edit"></i>
+                  <span>Absen Harian</span>
                 </a>
               </li>
 
-              <li class="sidebar-item">
-                <a href="riwayat_absen.html" class="sidebar-link">
+              <li class="sidebar-item has-sub active">
+                <a href="#" class="sidebar-link">
+                  <i class="bi bi-envelope-fill"></i>
+                  <span>Approval</span>
+                </a>
+                <ul class="submenu">
+                  <li class="submenu-item">
+                    <a href="approval_izin.html">Izin</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="approval_sakit.html">Sakit</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="approval_cuti.html">Cuti</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item has-sub">
+                <a href="#" class="sidebar-link">
                   <i class="icon dripicons dripicons-blog"></i>
-                  <span>Riwayat Absen</span>
+                  <span>Laporan</span>
+                </a>
+                <ul class="submenu">
+                  <li class="submenu-item">
+                    <a href="../laporan/laporan_absen.html">Absen</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="../laporan/laporan_izin.html">Izin</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="../laporan/laporan_sakit.html">Sakit</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="../laporan/laporan_cuti.html">Cuti</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="sidebar-item">
+                <a href="../manajemen_pegawai.html" class="sidebar-link">
+                  <i class="icon dripicons dripicons-user"></i>
+                  <span>Manajemen Pegawai</span>
                 </a>
               </li>
             </ul>
@@ -169,14 +211,16 @@
                   <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="user-menu d-flex">
                       <div class="user-name text-end me-3">
-                        <h6 class="mb-0 text-gray-600">{nama_pegawai}</h6>
+                        <h6 class="mb-0 text-gray-600">
+                          Admin Kepegawaian {OPD}
+                        </h6>
                         <p class="mb-0 text-sm text-gray-600">
-                          {jabatan_pegawai}
+                          Administrator Kepegawaian
                         </p>
                       </div>
                       <div class="user-img d-flex align-items-center">
                         <div class="avatar avatar-md">
-                          <img src="../assets/images/faces/1.jpg" />
+                          <img src="../../assets/images/faces/1.jpg" />
                         </div>
                       </div>
                     </div>
@@ -187,7 +231,7 @@
                     style="min-width: 11rem"
                   >
                     <li>
-                      <h6 class="dropdown-header">Hello, {nama}!</h6>
+                      <h6 class="dropdown-header">Hello, Admin!</h6>
                     </li>
                     <li>
                       <a class="dropdown-item" href="#"
@@ -211,44 +255,152 @@
         <div id="main-content">
           <div class="page-heading">
             <div class="page-title">
-              <div class="container">
-                <div class="col-12 col-md-6 order-md-1 order-last mb-3">
-                  <h3>Menu Absensi</h3>
+              <div class="row">
+                <div class="col-12 col-md-6 order-md-1 order-last">
+                  <h3>Approval Izin</h3>
+                </div>
+                <div class="col-12 col-md-6 order-md-2 order-first">
+                  <nav
+                    aria-label="breadcrumb"
+                    class="breadcrumb-header float-start float-lg-end"
+                  >
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="../index.html">Dashboard</a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                        Approval Izin
+                      </li>
+                    </ol>
+                  </nav>
                 </div>
               </div>
             </div>
-            <section class="section">
+            <section class="row">
               <div class="col-12 col-lg-12">
-                <div class="row mb-4">
-                  <div class="col-xl-3 col-md-3 col-sm-3 mb-2">
-                    <a href="#" class="btn rounded-pill btn-lg btn-success"
-                      >Absen Masuk</a
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-3 col-sm-3 mb-2">
-                    <a href="#" class="btn rounded-pill btn-lg btn-primary"
-                      >Absen Pulang</a
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-3 col-sm-3 mb-2">
-                    <a href="#" class="btn rounded-pill btn-lg btn-warning"
-                      >Absen Penugasan</a
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-3 col-sm-3 mb-2">
-                    <a href="#" class="btn rounded-pill btn-lg btn-danger"
-                      >Pengajuan</a
-                    >
-                  </div>
-                </div>
                 <div class="row">
                   <div class="col-12">
                     <div class="card">
-                      <div class="card-header">
-                        <h4>Statistik Absensi</h4>
-                      </div>
                       <div class="card-body">
-                        <div id="barPegawai"></div>
+                        <table class="table table-striped" id="table1">
+                          <thead>
+                            <tr>
+                              <th>No</th>
+                              <th>Nama</th>
+                              <th>Keterangan Izin</th>
+                              <th>Tanggal Awal</th>
+                              <th>Tanggal Akhir</th>
+                              <th>Status</th>
+                              <th>Opsional</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1.</td>
+                              <td>Ihsan FJ</td>
+                              <td>Izin Wisuda</td>
+                              <td>01-01-2023</td>
+                              <td>13-01-2023</td>
+                              <td>
+                                <span class="badge bg-success">Disetujui</span>
+                              </td>
+                              <td>
+                                <a
+                                  href="#"
+                                  class="btn btn-sm btn-primary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#detailapprovalizinForm"
+                                  >Detail</a
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>2.</td>
+                              <td>Dani Kaharu</td>
+                              <td>Izin Wisuda</td>
+                              <td>01-01-2023</td>
+                              <td>01-01-2023</td>
+                              <td>
+                                <span class="badge bg-success">Disetujui</span>
+                              </td>
+                              <td>
+                                <a
+                                  href="#"
+                                  class="btn btn-sm btn-primary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#detailapprovalizinForm"
+                                  >Detail</a
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>3.</td>
+                              <td>Azwar</td>
+                              <td>Izin Wisuda</td>
+                              <td>01-01-2023</td>
+                              <td>01-01-2023</td>
+                              <td>
+                                <span class="badge bg-warning"
+                                  >Belum Disetujui</span
+                                >
+                              </td>
+                              <td>
+                                <a
+                                  href="#"
+                                  class="btn btn-sm btn-primary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#detailapprovalizinForm"
+                                  >Detail</a
+                                >
+                                <a
+                                  href="#"
+                                  class="btn btn-sm btn-secondary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#prosesapprovalizinForm"
+                                  >Proses</a
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>4.</td>
+                              <td>Salman</td>
+                              <td>Izin Wisuda</td>
+                              <td>01-01-2023</td>
+                              <td>01-01-2023</td>
+                              <td>
+                                <span class="badge bg-danger">Ditolak</span>
+                              </td>
+                              <td>
+                                <a
+                                  href="#"
+                                  class="btn btn-sm btn-primary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#detailapprovalizinForm"
+                                  >Detail</a
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>5.</td>
+                              <td>Kayyis</td>
+                              <td>Izin Wisuda</td>
+                              <td>01-01-2023</td>
+                              <td>01-01-2023</td>
+                              <td>
+                                <span class="badge bg-danger">Dibatalkan</span>
+                              </td>
+                              <td>
+                                <a
+                                  href="#"
+                                  class="btn btn-sm btn-primary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#detailapprovalizinForm"
+                                  >Detail</a
+                                >
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </div>
@@ -277,10 +429,10 @@
       </div>
     </div>
 
-    <!-- awal buat modal form pengajuan  -->
+    <!-- awal modal detail approval izin -->
     <div
       class="modal fade text-left"
-      id="buatpengajuanForm"
+      id="detailapprovalizinForm"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel33"
@@ -292,7 +444,9 @@
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel33">Form Buat Pengajuan</h4>
+            <h4 class="modal-title" id="myModalLabel33">
+              Detail Pengajuan Izin
+            </h4>
             <button
               type="button"
               class="close"
@@ -308,72 +462,56 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="jenis_pengajuan">Jenis Pengajuan</label>
-                      <fieldset class="form-group">
-                        <select class="form-select" id="select_jenis_pengajuan">
-                          <option>Sakit</option>
-                          <option>Izin</option>
-                          <option>Cuti</option>
-                        </select>
-                      </fieldset>
+                      <label for="nama_pegawai"><b>Nama Pegawai</b></label>
+                      <p>Azwar</p>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
                       <label for="keterangan_pengajuan"
-                        >Keterangan Pengajuan</label
+                        ><b>Keterangan Pengajuan Cuti</b></label
                       >
-                      <textarea
-                        class="form-control"
-                        id="text_area_keterangan_pengajuan"
-                        rows="3"
-                      ></textarea>
+                      <p class="text-justify">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        A cupiditate dolor vel quasi cumque, odio,
+                        exercitationem voluptate dolorum iure amet porro ab quae
+                        explicabo corrupti at itaque voluptatem ducimus tempora.
+                      </p>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="file_pengajuan">File Pengajuan</label>
-                      <input
-                        class="form-control"
-                        type="file"
-                        id="form_file_pengajuan"
-                      />
+                      <label for="file_pengajuan"><b>File Pengajuan</b></label>
+                      <p>
+                        <a href="#">link_file_pengajuan.pdf</a>
+                      </p>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
                       <label for="tanggal_awal_pengajuan"
-                        >Tanggal Awal Pengajuan</label
+                        ><b>Tanggal Mulai Pengajuan</b></label
                       >
-                      <input
-                        type="text"
-                        id="tngl_pengajuan_awal"
-                        class="form-control"
-                        name="tanggal_awal_pengajuan"
-                      />
+                      <p>10-12-2023</p>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
                       <label for="tanggal_akhir_pengajuan"
-                        >Tanggal Akhir Pengajuan</label
+                        ><b>Tanggal Akhir Pengajuan</b></label
                       >
-                      <input
-                        type="text"
-                        id="tngl_pengajuan_akhir"
-                        class="form-control"
-                        name="tanggal_akhir_pengajuan"
-                      />
+                      <p>16-01-2023</p>
                     </div>
                   </div>
-                  <div class="col-12 d-flex justify-content-end">
-                    <button
-                      type="submit"
-                      id="toastSuksesTambahData"
-                      class="btn btn-primary me-1 mb-1"
-                    >
-                      Submit
-                    </button>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="tanggal_akhir_pengajuan"
+                        ><b>Status Persetujuan</b></label
+                      >
+                      <p>
+                        <span class="badge bg-warning">Belum Disetujui</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -382,6 +520,7 @@
         </div>
       </div>
     </div>
+    <!-- akhir modal filter cetak laporan -->
     <!--awal modal proses approval pengajuan Cuti -->
     <div
       class="modal fade text-left"
@@ -487,22 +626,21 @@
       </div>
     </div>
     <!-- akhir modal proses approval pengajuan Cuti -->
-    
 
-    <script src="../assets/js/bootstrap.js"></script>
-    <script src="../assets/js/app.js"></script>
+    <script src="../../assets/js/bootstrap.js"></script>
+    <script src="../../assets/js/app.js"></script>
 
-    <script src="../assets/extensions/jquery/jquery.min.js"></script>
+    <script src="../../assets/extensions/jquery/jquery.min.js"></script>
 
     <!-- Need: Apexcharts -->
-    <script src="../assets/extensions/dayjs/dayjs.min.js"></script>
-    <script src="../assets/extensions/apexcharts/apexcharts.min.js"></script>
-    <script src="../assets/js/pages/ui-apexchart.js"></script>
-    <script src="../assets/js/pages/dashboard.js"></script>
+    <script src="../../assets/extensions/dayjs/dayjs.min.js"></script>
+    <script src="../../assets/extensions/apexcharts/apexcharts.min.js"></script>
+    <script src="../../assets/js/pages/ui-apexchart.js"></script>
+    <script src="../../assets/js/pages/dashboard.js"></script>
+    <script src="../../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="../../assets/js/pages/simple-datatables.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-    <script src="../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
-    <script src="../assets/extensions/toastify-js/src/toastify.js"></script>
+    <script src="../../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
 
     <script>
       $("#tngl_pengajuan_awal").datepicker({
@@ -511,18 +649,22 @@
       $("#tngl_pengajuan_akhir").datepicker({
         format: "dd-mm-yyyy",
       });
-
       document
-        .getElementById("toastSuksesTambahData")
-        .addEventListener("click", () => {
-          Toastify({
-            text: "Sukses Buat Pengajuan",
-            duration: 3000,
-            close: true,
-            gravity: "top",
-            position: "right",
-            backgroundColor: "#4fbe87",
-          }).showToast();
+        .getElementById("alertApproval")
+        .addEventListener("click", (e) => {
+          Swal.fire({
+            title: "Apakah Anda Yakin Approve dengan Status Tersebut?",
+            text: "Anda Akan Mengubah Status Persetujuan, dan Tidak Dapat Dikembalikan!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Approve!",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire("Approval!", "Your data has been approval.", "success");
+            }
+          });
         });
     </script>
   </body>
