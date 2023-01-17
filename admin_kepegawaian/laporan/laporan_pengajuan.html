@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laporan Cuti - Sisenpai</title>
+    <title>Laporan Pengajuan - Sisenpai</title>
 
     <link rel="stylesheet" href="../../assets/css/main/app.css" />
     <link rel="stylesheet" href="../../assets/css/main/app-dark.css" />
@@ -46,7 +46,7 @@
               <div class="logo">
                 <a href="index.html"
                   ><img
-                    src="../../assets/images/logo/logo.svg"
+                    src="../../assets/images/logo/sisenpai_logo.png"
                     alt="Logo"
                     srcset=""
                 /></a>
@@ -127,29 +127,19 @@
               </li>
 
               <li class="sidebar-item">
-                <a href="../absen_harian.html" class="sidebar-link">
-                  <i class="icon dripicons dripicons-document-edit"></i>
-                  <span>Absen Harian</span>
-                </a>
-              </li>
-
-              <li class="sidebar-item has-sub">
-                <a href="#" class="sidebar-link">
+                <a href="../approval.html" class="sidebar-link">
                   <i class="bi bi-envelope-fill"></i>
                   <span>Approval</span>
                 </a>
-                <ul class="submenu">
-                  <li class="submenu-item">
-                    <a href="../approval/approval_izin.html">Izin</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="../approval/approval_sakit.html">Sakit</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="../approval/approval_cuti.html">Cuti</a>
-                  </li>
-                </ul>
               </li>
+
+              <li class="sidebar-item">
+                <a href="../manajemen_pegawai.html" class="sidebar-link">
+                  <i class="icon dripicons dripicons-user"></i>
+                  <span>Manajemen Pegawai</span>
+                </a>
+              </li>
+
               <li class="sidebar-item has-sub active">
                 <a href="#" class="sidebar-link">
                   <i class="icon dripicons dripicons-blog"></i>
@@ -160,22 +150,9 @@
                     <a href="laporan_absen.html">Absen</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="laporan_izin.html">Izin</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="laporan_sakit.html">Sakit</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="laporan_cuti.html">Cuti</a>
+                    <a href="laporan_pengajuan.html">Pengajuan</a>
                   </li>
                 </ul>
-              </li>
-
-              <li class="sidebar-item">
-                <a href="../manajemen_pegawai.html" class="sidebar-link">
-                  <i class="icon dripicons dripicons-user"></i>
-                  <span>Manajemen Pegawai</span>
-                </a>
               </li>
             </ul>
           </div>
@@ -252,7 +229,7 @@
             <div class="page-title">
               <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                  <h3>Laporan Cuti</h3>
+                  <h4>Laporan Pengajuan</h4>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                   <nav
@@ -264,7 +241,7 @@
                         <a href="../index.html">Dashboard</a>
                       </li>
                       <li class="breadcrumb-item active" aria-current="page">
-                        Laporan Cuti
+                        Laporan Pengajuan
                       </li>
                     </ol>
                   </nav>
@@ -278,14 +255,37 @@
                     <div class="card">
                       <div class="card-header">
                         <div class="row">
-                          <div class="col-sm-5">
+                          <div class="col-md-4">
                             <a
                               href="#"
-                              class="btn btn-md btn-primary"
+                              class="btn btn-md btn-primary mb-3"
                               data-bs-toggle="modal"
-                              data-bs-target="#laporancutiForm"
+                              data-bs-target="#laporanpengajuanForm"
                               >Cetak Laporan</a
                             >
+                          </div>
+                          <div class="col-md-4">
+                            <h6>Filter Jenis</h6>
+                            <fieldset class="form-group">
+                              <select
+                                class="form-select"
+                                id="basicSelect"
+                                name="filter_status"
+                              >
+                                <option>Izin</option>
+                                <option>Cuti</option>
+                                <option>Sakit</option>
+                              </select>
+                            </fieldset>
+                          </div>
+                          <div class="col-md-4">
+                            <h6>Filter Tanggal</h6>
+                            <input
+                              type="text"
+                              id="tngl_filter"
+                              class="form-control"
+                              name="tanggal_awal_pengajuan"
+                            />
                           </div>
                         </div>
                       </div>
@@ -294,8 +294,9 @@
                           <thead>
                             <tr>
                               <th>No</th>
-                              <th>Nama Pegawai</th>
-                              <th>Keterangan Cuti</th>
+                              <th>Nama</th>
+                              <th>Jenis Pengajuan</th>
+                              <th>Keterangan Izin</th>
                               <th>Tanggal Awal</th>
                               <th>Tanggal Akhir</th>
                               <th>Status</th>
@@ -305,7 +306,8 @@
                             <tr>
                               <td>1.</td>
                               <td>Ihsan FJ</td>
-                              <td>Cuti Wisuda</td>
+                              <td>Izin</td>
+                              <td>Izin Wisuda</td>
                               <td>01-01-2023</td>
                               <td>13-01-2023</td>
                               <td>
@@ -315,9 +317,10 @@
                             <tr>
                               <td>2.</td>
                               <td>Dani Kaharu</td>
-                              <td>Cuti Wisuda</td>
+                              <td>Sakit</td>
+                              <td>Sakit Demam</td>
                               <td>01-01-2023</td>
-                              <td>13-01-2023</td>
+                              <td>01-01-2023</td>
                               <td>
                                 <span class="badge bg-success">Disetujui</span>
                               </td>
@@ -325,19 +328,23 @@
                             <tr>
                               <td>3.</td>
                               <td>Azwar</td>
-                              <td>Cuti Wisuda</td>
+                              <td>Sakit</td>
+                              <td>Sakit Ambeien</td>
                               <td>01-01-2023</td>
-                              <td>13-01-2023</td>
+                              <td>01-01-2023</td>
                               <td>
-                                <span class="badge bg-warning">Diproses</span>
+                                <span class="badge bg-warning"
+                                  >Belum Disetujui</span
+                                >
                               </td>
                             </tr>
                             <tr>
                               <td>4.</td>
                               <td>Salman</td>
+                              <td>Cuti</td>
                               <td>Cuti Wisuda</td>
                               <td>01-01-2023</td>
-                              <td>13-01-2023</td>
+                              <td>01-01-2023</td>
                               <td>
                                 <span class="badge bg-danger">Ditolak</span>
                               </td>
@@ -345,9 +352,10 @@
                             <tr>
                               <td>5.</td>
                               <td>Kayyis</td>
-                              <td>Cuti Rebahan</td>
-                              <td>04-01-2023</td>
-                              <td>27-02-2023</td>
+                              <td>Izin</td>
+                              <td>Izin Wisuda</td>
+                              <td>01-01-2023</td>
+                              <td>01-01-2023</td>
                               <td>
                                 <span class="badge bg-danger">Dibatalkan</span>
                               </td>
@@ -385,7 +393,7 @@
     <!-- awal modal filter cetak laporan -->
     <div
       class="modal fade text-left"
-      id="laporancutiForm"
+      id="laporanpengajuanForm"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel33"
@@ -397,7 +405,9 @@
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel33">Cetak Laporan Cuti</h4>
+            <h4 class="modal-title" id="myModalLabel33">
+              Cetak Laporan Pengajuan
+            </h4>
             <button
               type="button"
               class="close"

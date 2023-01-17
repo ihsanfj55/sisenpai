@@ -46,7 +46,7 @@
               <div class="logo">
                 <a href="index.html"
                   ><img
-                    src="../../assets/images/logo/logo.svg"
+                    src="../../assets/images/logo/sisenpai_logo.png"
                     alt="Logo"
                     srcset=""
                 /></a>
@@ -127,29 +127,18 @@
               </li>
 
               <li class="sidebar-item">
-                <a href="../absen_harian.html" class="sidebar-link">
-                  <i class="icon dripicons dripicons-document-edit"></i>
-                  <span>Absen Harian</span>
-                </a>
-              </li>
-
-              <li class="sidebar-item has-sub">
-                <a href="#" class="sidebar-link">
+                <a href="../approval.html" class="sidebar-link">
                   <i class="bi bi-envelope-fill"></i>
                   <span>Approval</span>
                 </a>
-                <ul class="submenu">
-                  <li class="submenu-item">
-                    <a href="../approval/approval_izin.html">Izin</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="../approval/approval_sakit.html">Sakit</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="../approval/approval_cuti.html">Cuti</a>
-                  </li>
-                </ul>
               </li>
+              <li class="sidebar-item">
+                <a href="../manajemen_pegawai.html" class="sidebar-link">
+                  <i class="icon dripicons dripicons-user"></i>
+                  <span>Manajemen Pegawai</span>
+                </a>
+              </li>
+
               <li class="sidebar-item has-sub active">
                 <a href="#" class="sidebar-link">
                   <i class="icon dripicons dripicons-blog"></i>
@@ -160,22 +149,9 @@
                     <a href="laporan_absen.html">Absen</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="laporan_izin.html">Izin</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="laporan_sakit.html">Sakit</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="laporan_cuti.html">Cuti</a>
+                    <a href="laporan_pengajuan.html">Pengajuan</a>
                   </li>
                 </ul>
-              </li>
-
-              <li class="sidebar-item">
-                <a href="../manajemen_pegawai.html" class="sidebar-link">
-                  <i class="icon dripicons dripicons-user"></i>
-                  <span>Manajemen Pegawai</span>
-                </a>
               </li>
             </ul>
           </div>
@@ -278,7 +254,7 @@
                     <div class="card">
                       <div class="card-header">
                         <div class="row">
-                          <div class="col-sm-5">
+                          <div class="col-md-4">
                             <a
                               href="#"
                               class="btn btn-md btn-primary"
@@ -286,6 +262,24 @@
                               data-bs-target="#laporanabsenForm"
                               >Cetak Laporan</a
                             >
+                          </div>
+                          <div class="col-md-4">
+                            <h6>Filter Tanggal Awal</h6>
+                            <input
+                              type="text"
+                              id="tngl_filter"
+                              class="form-control"
+                              name="tanggal_awal_pengajuan"
+                            />
+                          </div>
+                          <div class="col-md-4">
+                            <h6>Filter Tanggal Akhir</h6>
+                            <input
+                              type="text"
+                              id="tngl_filter"
+                              class="form-control"
+                              name="tanggal_akhir_pengajuan"
+                            />
                           </div>
                         </div>
                       </div>
@@ -444,9 +438,7 @@
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel33">
-              Cetak Laporan Absen
-            </h4>
+            <h4 class="modal-title" id="myModalLabel33">Cetak Laporan Absen</h4>
             <button
               type="button"
               class="close"
