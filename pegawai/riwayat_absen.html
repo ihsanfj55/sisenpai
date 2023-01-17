@@ -27,10 +27,7 @@
       rel="stylesheet"
       href="../assets/extensions/simple-datatables/style.css"
     />
-    <link
-      rel="stylesheet"
-      href="../assets/css/pages/simple-datatables.css"
-    />
+    <link rel="stylesheet" href="../assets/css/pages/simple-datatables.css" />
   </head>
 
   <body>
@@ -111,11 +108,11 @@
               </div>
             </div>
           </div>
-           <div class="sidebar-menu">
+          <div class="sidebar-menu">
             <ul class="menu">
               <li class="sidebar-title">Menu</li>
 
-              <li class="sidebar-item ">
+              <li class="sidebar-item">
                 <a href="index.html" class="sidebar-link">
                   <i class="bi bi-grid-fill"></i>
                   <span>Beranda</span>
@@ -240,7 +237,73 @@
                       <h4>Statistik Absensi</h4>
                     </div>
                     <div class="card-body">
-                      <div id="barPegawaiAbsen"></div>
+                      <table class="table table-striped" id="table1">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Jenis Absen</th>
+                            <th>Tanggal</th>
+                            <th>Waktu Absen</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Absen Datang</td>
+                            <td>09-01-2023</td>
+                            <td>10:00</td>
+                            <td>
+                              <span class="badge bg-success">Terlambat</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Absen Pulang</td>
+                            <td>09-01-2023</td>
+                            <td>16:00</td>
+                            <td>
+                              <span class="badge bg-success">Sesuai Waktu</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>Absen Penugasan Datang</td>
+                            <td>10-01-2023</td>
+                            <td>08:00</td>
+                            <td>
+                              <span class="badge bg-success">Tepat Waktu</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>Absen Penugasan Pulang</td>
+                            <td>10-01-2023</td>
+                            <td>16:00</td>
+                            <td>
+                              <span class="badge bg-success">Sesuai Waktu</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td>Absen Datang</td>
+                            <td>11-01-2023</td>
+                            <td>07:00</td>
+                            <td>
+                              <span class="badge bg-success">Tepat Waktu</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>6</td>
+                            <td>Absen Pulang</td>
+                            <td>11-01-2023</td>
+                            <td>12:00</td>
+                            <td>
+                              <span class="badge bg-warning">Cepat Pulang</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
