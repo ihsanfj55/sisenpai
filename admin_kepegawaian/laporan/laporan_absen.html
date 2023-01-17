@@ -267,18 +267,18 @@
                             <h6>Filter Tanggal Awal</h6>
                             <input
                               type="text"
-                              id="tngl_filter"
+                              id="tanggal_filter_awal"
                               class="form-control"
-                              name="tanggal_awal_pengajuan"
+                              name="tanggal_filter_awal"
                             />
                           </div>
                           <div class="col-md-4">
                             <h6>Filter Tanggal Akhir</h6>
                             <input
                               type="text"
-                              id="tngl_filter"
+                              id="tanggal_filter_akhir"
                               class="form-control"
-                              name="tanggal_akhir_pengajuan"
+                              name="tanggal_filter_akhir"
                             />
                           </div>
                         </div>
@@ -507,10 +507,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <script>
-      $("#tngl_pengajuan_awal").datepicker({
+      $("#tanggal_filter_awal").datepicker({
         format: "dd-mm-yyyy",
       });
-      $("#tngl_pengajuan_akhir").datepicker({
+      $("#tanggal_filter_akhir").datepicker({
         format: "dd-mm-yyyy",
       });
     </script>
