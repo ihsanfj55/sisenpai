@@ -3,43 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Setting - Sisenpai</title>
+    <title>Jabatan - Sisenpai</title>
 
-    <link rel="stylesheet" href="../assets/css/main/app.css" />
-    <link rel="stylesheet" href="../assets/css/main/app-dark.css" />
+    <link rel="stylesheet" href="../../assets/css/main/app.css" />
+    <link rel="stylesheet" href="../../assets/css/main/app-dark.css" />
     <link
       rel="shortcut icon"
-      href="../assets/images/logo/logo.png"
+      href="../../assets/images/logo/logo.png"
       type="image/png"
     />
 
-    <link rel="stylesheet" href="../assets/css/shared/iconly.css" />
+    <link rel="stylesheet" href="../../assets/css/shared/iconly.css" />
     <link
       rel="stylesheet"
-      href="../assets/extensions/@icon/dripicons/dripicons.css"
+      href="../../assets/extensions/@icon/dripicons/dripicons.css"
     />
     <link
       rel="stylesheet"
-      href="../assets/extensions/@fortawesome/fontawesome-free/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+      href="../../assets/extensions/@fortawesome/fontawesome-free/css/all.min.css"
     />
 
     <link
       rel="stylesheet"
-      href="../assets/extensions/sweetalert2/sweetalert2.min.css"
+      href="../../assets/extensions/simple-datatables/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/css/pages/simple-datatables.css"
     />
 
     <link
       rel="stylesheet"
-      href="../assets/extensions/toastify-js/src/toastify.css"
+      href="../../assets/extensions/sweetalert2/sweetalert2.min.css"
     />
 
     <link
       rel="stylesheet"
-      href="../assets/extensions/simple-datatables/style.css"
+      href="../../assets/extensions/toastify-js/src/toastify.css"
     />
   </head>
 
@@ -50,9 +50,9 @@
           <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
               <div class="logo">
-                <a href="index.html"
+                <a href="../index.html"
                   ><img
-                    src="../assets/images/logo/sisenpai_logo.png"
+                    src="../../assets/images/logo/sisenpai_logo.png"
                     alt="Logo"
                     srcset=""
                 /></a>
@@ -126,34 +126,32 @@
               <li class="sidebar-title">Menu</li>
 
               <li class="sidebar-item">
-                <a href="index.html" class="sidebar-link">
+                <a href="../index.html" class="sidebar-link">
                   <i class="bi bi-grid-fill"></i>
                   <span>Beranda</span>
                 </a>
               </li>
 
-              <li class="sidebar-item has-sub">
+              <li class="sidebar-item has-sub active">
                 <a href="#" class="sidebar-link">
                   <i class="icon dripicons dripicons-toggles"></i>
                   <span>Manajemen</span>
                 </a>
                 <ul class="submenu">
                   <li class="submenu-item">
-                    <a href="manajemen/admin_kepegawaian.html"
-                      >Admin Kepegawaian</a
-                    >
+                    <a href="admin_kepegawaian.html">Admin Kepegawaian</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="manajemen/instansi.html">Instansi</a>
+                    <a href="instansi.html">Instansi</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="manajemen/jabatan.html">Jabatan</a>
+                    <a href="jabatan.html">Jabatan</a>
                   </li>
                 </ul>
               </li>
 
-              <li class="sidebar-item active">
-                <a href="setting.html" class="sidebar-link">
+              <li class="sidebar-item">
+                <a href="../setting.html" class="sidebar-link">
                   <i class="icon dripicons dripicons-gear"></i>
                   <span>Setting</span>
                 </a>
@@ -192,7 +190,7 @@
                       </div>
                       <div class="user-img d-flex align-items-center">
                         <div class="avatar avatar-md">
-                          <img src="../assets/images/faces/1.jpg" />
+                          <img src="../../assets/images/faces/1.jpg" />
                         </div>
                       </div>
                     </div>
@@ -203,7 +201,7 @@
                     style="min-width: 11rem"
                   >
                     <li>
-                      <h6 class="dropdown-header">Hello, {nama}!</h6>
+                      <h6 class="dropdown-header">Hello, Admin!</h6>
                     </li>
                     <li>
                       <a class="dropdown-item" href="#"
@@ -227,9 +225,24 @@
         <div id="main-content">
           <div class="page-heading">
             <div class="page-title">
-              <div class="container">
-                <div class="col-12 col-md-6 order-md-1 order-last mb-2">
-                  <h4>Setting Waktu Absen</h4>
+              <div class="row">
+                <div class="col-12 col-md-6 order-md-1 order-last">
+                  <h4>Manajemen Jabatan</h4>
+                </div>
+                <div class="col-12 col-md-6 order-md-2 order-first">
+                  <nav
+                    aria-label="breadcrumb"
+                    class="breadcrumb-header float-start float-lg-end"
+                  >
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="../index.html">Dashboard</a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                        Manajemen Jabatan
+                      </li>
+                    </ol>
+                  </nav>
                 </div>
               </div>
             </div>
@@ -241,14 +254,14 @@
                     <div class="card-header">
                       <div class="container">
                         <div class="row">
-                          <!-- Button trigger for tambah data settingan absen form modal -->
+                          <!-- Button trigger for tambah data jabatan form modal -->
                           <div class="col-sm-5">
                             <a
                               href="#"
                               class="btn btn-md btn-primary"
                               data-bs-toggle="modal"
-                              data-bs-target="#tambahsettinganabsenForm"
-                              >Tambah Settingan</a
+                              data-bs-target="#tambahjabatanForm"
+                              >Tambah jabatan</a
                             >
                           </div>
                         </div>
@@ -259,22 +272,60 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Keterangan</th>
-                            <th>Jam</th>
+                            <th>Nama Jabatan</th>
                             <th>Opsional</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>1</td>
-                            <td>Jam Absen Masuk</td>
-                            <td>08:00:00</td>
+                            <td>Kepala Dinas</td>
                             <td>
                               <a
                                 href="#"
                                 class="btn btn-sm btn-warning"
                                 data-bs-toggle="modal"
-                                data-bs-target="#tambahsettinganabsenForm"
+                                data-bs-target="#editjabatanForm"
+                                >Edit</a
+                              >
+                              <button
+                                href="#"
+                                id="alertHapus"
+                                class="btn btn-sm btn-danger"
+                              >
+                                Hapus
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Sekretaris Dinas</td>
+                            <td>
+                              <a
+                                href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editinstansiForm"
+                                >Edit</a
+                              >
+                              <button
+                                href="#"
+                                id="alertHapus"
+                                class="btn btn-sm btn-danger"
+                              >
+                                Hapus
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>Kepala Bidang</td>
+                            <td>
+                              <a
+                                href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editjabatanForm"
                                 >Edit</a
                               >
                               <button
@@ -295,24 +346,44 @@
               </div>
             </section>
           </div>
+
+          <footer>
+            <div class="footer clearfix mb-0 text-muted">
+              <div class="float-start">
+                <p>2021 &copy; Mazer</p>
+              </div>
+              <div class="float-end">
+                <p>
+                  Crafted with
+                  <span class="text-danger"
+                    ><i class="bi bi-heart-fill icon-mid"></i
+                  ></span>
+                  by <a href="https://ahmadsaugi.com">Saugi</a>
+                </p>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
     </div>
 
-    <!-- awal form tambah settingan asben -->
+    <!-- awal form tambah jabatan baru -->
     <div
       class="modal fade text-left"
-      id="tambahsettinganabsenForm"
+      id="tambahjabatanForm"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel33"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+        role="document"
+      >
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="myModalLabel33">
-              Form Tambah Settingan
+              Form Tambah Jabatan Baru
             </h4>
             <button
               type="button"
@@ -329,21 +400,10 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="Keterangan">Keterangan</label>
+                      <label for="nama_jabatan">Nama Jabatan</label>
                       <input
                         type="text"
-                        name="nip"
-                        class="form-control"
-                        id="basicInput"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="jam">Jam</label>
-                      <input
-                        type="time"
-                        name="jam"
+                        name="nama_jabatan"
                         class="form-control"
                         id="basicInput"
                       />
@@ -366,21 +426,24 @@
         </div>
       </div>
     </div>
-    <!-- akhir form tambah settingan absen-->
+    <!-- akhir form tambah jabatan baru-->
 
-    <!-- awal form edit settingan asben -->
+    <!-- awal form edit jabatan  -->
     <div
       class="modal fade text-left"
-      id="editsettinganabsenForm"
+      id="editjabatanForm"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel33"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+        role="document"
+      >
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel33">Form Edit Settingan</h4>
+            <h4 class="modal-title" id="myModalLabel33">Form Edit instansi</h4>
             <button
               type="button"
               class="close"
@@ -396,23 +459,13 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="Keterangan">Keterangan</label>
+                      <label for="nama_jabatan">Nama Jabatan</label>
                       <input
                         type="text"
-                        name="nip"
                         class="form-control"
                         id="basicInput"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="jam">Jam</label>
-                      <input
-                        type="time"
-                        name="jam"
-                        class="form-control"
-                        id="basicInput"
+                        name="nama_jabatan"
+                        value=""
                       />
                     </div>
                   </div>
@@ -433,26 +486,20 @@
         </div>
       </div>
     </div>
-    <!-- akhir form edit settingan absen-->
+    <!-- akhir form edit jabatan -->
 
-    <script src="../assets/js/bootstrap.js"></script>
-    <script src="../assets/js/app.js"></script>
-
-    <script src="../assets/extensions/jquery/jquery.min.js"></script>
+    <script src="../../assets/js/bootstrap.js"></script>
+    <script src="../../assets/js/app.js"></script>
 
     <!-- Need: Apexcharts -->
-    <script src="../assets/extensions/dayjs/dayjs.min.js"></script>
-    <script src="../assets/extensions/apexcharts/apexcharts.min.js"></script>
-    <script src="../assets/js/pages/ui-apexchart.js"></script>
-    <script src="../assets/js/pages/dashboard.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-    <script src="../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
-    <script src="../assets/extensions/toastify-js/src/toastify.js"></script>
-
-    <script src="../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
-    <script src="../assets/js/pages/simple-datatables.js"></script>
-
+    <script src="../../assets/extensions/dayjs/dayjs.min.js"></script>
+    <script src="../../assets/extensions/apexcharts/apexcharts.min.js"></script>
+    <script src="../../assets/js/pages/ui-apexchart.js"></script>
+    <script src="../../assets/js/pages/dashboard.js"></script>
+    <script src="../../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+    <script src="../../assets/extensions/toastify-js/src/toastify.js"></script>
+    <script src="../../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="../../assets/js/pages/simple-datatables.js"></script>
     <script>
       document.getElementById("alertHapus").addEventListener("click", (e) => {
         Swal.fire({
