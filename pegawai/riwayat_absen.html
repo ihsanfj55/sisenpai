@@ -28,6 +28,10 @@
       href="../assets/extensions/simple-datatables/style.css"
     />
     <link rel="stylesheet" href="../assets/css/pages/simple-datatables.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    />
   </head>
 
   <body>
@@ -234,7 +238,15 @@
                 <div class="col-12">
                   <div class="card">
                     <div class="card-header">
-                      <h4>Statistik Absensi</h4>
+                      <div class="col-md-4">
+                        <h6>Filter Bulan & Tahun</h6>
+                        <input
+                          type="text"
+                          id="filter_bulan_tahun"
+                          class="form-control"
+                          name="filter_bulan_tahun"
+                        />
+                      </div>
                     </div>
                     <div class="card-body">
                       <table class="table table-striped" id="table1">
@@ -333,6 +345,7 @@
     </div>
     <script src="../assets/js/bootstrap.js"></script>
     <script src="../assets/js/app.js"></script>
+    <script src="../assets/extensions/jquery/jquery.min.js"></script>
 
     <!-- Need: Apexcharts -->
     <script src="../assets/extensions/dayjs/dayjs.min.js"></script>
@@ -342,5 +355,13 @@
 
     <script src="../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
     <script src="../assets/js/pages/simple-datatables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script>
+      $("#filter_bulan_tahun").datepicker({
+        format: "mm-yyyy",
+        viewMode: "months",
+        minViewMode: "months",
+      });
+    </script>
   </body>
 </html>
