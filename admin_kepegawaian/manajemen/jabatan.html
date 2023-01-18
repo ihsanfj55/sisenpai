@@ -5,38 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manajemen Pegawai - Sisenpai</title>
 
-    <link rel="stylesheet" href="../assets/css/main/app.css" />
-    <link rel="stylesheet" href="../assets/css/main/app-dark.css" />
+    <link rel="stylesheet" href="../../assets/css/main/app.css" />
+    <link rel="stylesheet" href="../../assets/css/main/app-dark.css" />
     <link
       rel="shortcut icon"
-      href="../assets/images/logo/logo.png"
+      href="../../assets/images/logo/logo.png"
       type="image/png"
     />
 
-    <link rel="stylesheet" href="../assets/css/shared/iconly.css" />
+    <link rel="stylesheet" href="../../assets/css/shared/iconly.css" />
     <link
       rel="stylesheet"
-      href="../assets/extensions/@icon/dripicons/dripicons.css"
+      href="../../assets/extensions/@icon/dripicons/dripicons.css"
     />
     <link
       rel="stylesheet"
-      href="../assets/extensions/@fortawesome/fontawesome-free/css/all.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="../assets/extensions/simple-datatables/style.css"
-    />
-    <link rel="stylesheet" href="../assets/css/pages/simple-datatables.css" />
-
-    <link
-      rel="stylesheet"
-      href="../assets/extensions/sweetalert2/sweetalert2.min.css"
+      href="../../assets/extensions/@fortawesome/fontawesome-free/css/all.min.css"
     />
 
     <link
       rel="stylesheet"
-      href="../assets/extensions/toastify-js/src/toastify.css"
+      href="../../assets/extensions/simple-datatables/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/css/pages/simple-datatables.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../../assets/extensions/sweetalert2/sweetalert2.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../../assets/extensions/toastify-js/src/toastify.css"
     />
   </head>
 
@@ -49,7 +52,7 @@
               <div class="logo">
                 <a href="index.html"
                   ><img
-                    src="../assets/images/logo/sisenpai_logo.png"
+                    src="../../assets/images/logo/sisenpai_logo.png"
                     alt="Logo"
                     srcset=""
                 /></a>
@@ -123,24 +126,32 @@
               <li class="sidebar-title">Menu</li>
 
               <li class="sidebar-item">
-                <a href="index.html" class="sidebar-link">
+                <a href="../index.html" class="sidebar-link">
                   <i class="bi bi-grid-fill"></i>
                   <span>Beranda</span>
                 </a>
               </li>
 
               <li class="sidebar-item">
-                <a href="approval.html" class="sidebar-link">
+                <a href="../approval.html" class="sidebar-link">
                   <i class="bi bi-envelope-fill"></i>
                   <span>Approval</span>
                 </a>
               </li>
 
-              <li class="sidebar-item active">
-                <a href="manajemen_pegawai.html" class="sidebar-link">
-                  <i class="icon dripicons dripicons-user"></i>
-                  <span>Manajemen Pegawai</span>
+              <li class="sidebar-item has-sub active">
+                <a href="#" class="sidebar-link">
+                  <i class="icon dripicons dripicons-toggles"></i>
+                  <span>Manajemen</span>
                 </a>
+                <ul class="submenu">
+                  <li class="submenu-item">
+                    <a href="pegawai.html">Pegawai</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="jabatan.html">Jabatan</a>
+                  </li>
+                </ul>
               </li>
 
               <li class="sidebar-item has-sub">
@@ -150,10 +161,10 @@
                 </a>
                 <ul class="submenu">
                   <li class="submenu-item">
-                    <a href="laporan/laporan_absen.html">Absen</a>
+                    <a href="../laporan/laporan_absen.html">Absen</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="laporan/laporan_pengajuan.html">Pengajuan</a>
+                    <a href="../laporan/laporan_pengajuan.html">Pengajuan</a>
                   </li>
                 </ul>
               </li>
@@ -195,7 +206,7 @@
                       </div>
                       <div class="user-img d-flex align-items-center">
                         <div class="avatar avatar-md">
-                          <img src="../assets/images/faces/1.jpg" />
+                          <img src="../../assets/images/faces/1.jpg" />
                         </div>
                       </div>
                     </div>
@@ -232,7 +243,7 @@
             <div class="page-title">
               <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                  <h4>Manajemen Pegawai {OPD}</h4>
+                  <h4>Manajemen Jabatan</h4>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                   <nav
@@ -241,10 +252,10 @@
                   >
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
-                        <a href="index.html">Dashboard</a>
+                        <a href="../index.html">Dashboard</a>
                       </li>
                       <li class="breadcrumb-item active" aria-current="page">
-                        Manajemen Pegawai
+                        Manajemen Jabatan
                       </li>
                     </ol>
                   </nav>
@@ -259,14 +270,14 @@
                     <div class="card-header">
                       <div class="container">
                         <div class="row">
-                          <!-- Button trigger for tambah data pegawai form modal -->
+                          <!-- Button trigger for tambah data jabatan form modal -->
                           <div class="col-sm-5">
                             <a
                               href="#"
                               class="btn btn-md btn-primary"
                               data-bs-toggle="modal"
-                              data-bs-target="#tambahpegawaiForm"
-                              >Tambah Pegawai</a
+                              data-bs-target="#tambahjabatanForm"
+                              >Tambah jabatan</a
                             >
                           </div>
                         </div>
@@ -277,26 +288,20 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>NIP</th>
-                            <th>Nama Pegawai</th>
-                            <th>Jabatan</th>
-                            <th>Email</th>
+                            <th>Nama Jabatan</th>
                             <th>Opsional</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>1</td>
-                            <td>12000222189222</td>
-                            <td>Hendra Lahay</td>
-                            <td>Kabid Informatika</td>
-                            <td>hendra.lahay@bonebolango.kab.go.id</td>
+                            <td>Kepala Dinas</td>
                             <td>
                               <a
                                 href="#"
                                 class="btn btn-sm btn-warning"
                                 data-bs-toggle="modal"
-                                data-bs-target="#editpegawaiForm"
+                                data-bs-target="#editjabatanForm"
                                 >Edit</a
                               >
                               <button
@@ -310,30 +315,40 @@
                           </tr>
                           <tr>
                             <td>2</td>
-                            <td>11201221313222</td>
-                            <td>Agung Hapsah Junus</td>
-                            <td>Kasi Aplikasi</td>
-                            <td>Agung.Junus@bonebolango.kab.go.id</td>
+                            <td>Sekretaris Dinas</td>
                             <td>
-                              <a href="#" class="btn btn-sm btn-warning"
+                              <a
+                                href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editinstansiForm"
                                 >Edit</a
                               >
-                              <button href="#" class="btn btn-sm btn-danger">
+                              <button
+                                href="#"
+                                id="alertHapus"
+                                class="btn btn-sm btn-danger"
+                              >
                                 Hapus
                               </button>
                             </td>
                           </tr>
                           <tr>
                             <td>3</td>
-                            <td>11201221313222</td>
-                            <td>Hendra Gobel</td>
-                            <td>Kasi jaringan</td>
-                            <td>hendra.Gobel@bonebolango.kab.go.id</td>
+                            <td>Kepala Bidang</td>
                             <td>
-                              <a href="#" class="btn btn-sm btn-warning"
+                              <a
+                                href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editjabatanForm"
                                 >Edit</a
                               >
-                              <button class="btn btn-sm btn-danger">
+                              <button
+                                href="#"
+                                id="alertHapus"
+                                class="btn btn-sm btn-danger"
+                              >
                                 Hapus
                               </button>
                             </td>
@@ -368,10 +383,10 @@
       </div>
     </div>
 
-    <!-- awal form tambah pegawai  -->
+    <!-- awal form tambah jabatan baru -->
     <div
       class="modal fade text-left"
-      id="tambahpegawaiForm"
+      id="tambahjabatanForm"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel33"
@@ -384,7 +399,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="myModalLabel33">
-              Form Tambah Pegawai Baru
+              Form Tambah Jabatan Baru
             </h4>
             <button
               type="button"
@@ -401,59 +416,16 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="nip">NIP Pegawai</label>
+                      <label for="nama_jabatan">Nama Jabatan</label>
                       <input
-                        type="number"
+                        type="text"
+                        name="nama_jabatan"
                         class="form-control"
                         id="basicInput"
                       />
                     </div>
                   </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="nama_pegawai">Nama Pegawai</label>
-                      <input type="text" class="form-control" id="basicInput" />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="keterangan_pengajuan">Jabatan Pegawai</label>
-                      <fieldset class="form-group">
-                        <select
-                          class="form-select"
-                          id="basicSelect"
-                          name="jabatan"
-                        >
-                          <option value="" selected disabled hidden>
-                            Choose here
-                          </option>
-                          <option>Kadis</option>
-                          <option>Kabid</option>
-                          <option>Kasi</option>
-                        </select>
-                      </fieldset>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="email">Email Pegawai</label>
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="basicInput"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="password">Password Pegawai</label>
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="basicInput"
-                      />
-                    </div>
-                  </div>
+
                   <div class="col-12 d-flex justify-content-end">
                     <button
                       type="submit"
@@ -470,12 +442,12 @@
         </div>
       </div>
     </div>
-    <!-- akhir form tambah pegawai -->
+    <!-- akhir form tambah jabatan baru-->
 
-    <!-- awal form edit pegawai  -->
+    <!-- awal form edit jabatan  -->
     <div
       class="modal fade text-left"
-      id="editpegawaiForm"
+      id="editjabatanForm"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel33"
@@ -487,9 +459,7 @@
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel33">
-              Form Edit Pegawai Baru
-            </h4>
+            <h4 class="modal-title" id="myModalLabel33">Form Edit instansi</h4>
             <button
               type="button"
               class="close"
@@ -505,59 +475,17 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="nip">NIP Pegawai</label>
+                      <label for="nama_jabatan">Nama Jabatan</label>
                       <input
-                        type="number"
+                        type="text"
                         class="form-control"
                         id="basicInput"
+                        name="nama_jabatan"
+                        value=""
                       />
                     </div>
                   </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="nama_pegawai">Nama Pegawai</label>
-                      <input type="text" class="form-control" id="basicInput" />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="keterangan_pengajuan">Jabatan Pegawai</label>
-                      <fieldset class="form-group">
-                        <select
-                          class="form-select"
-                          id="basicSelect"
-                          name="jabatan"
-                        >
-                          <option value="" selected disabled hidden>
-                            Choose here
-                          </option>
-                          <option>Kadis</option>
-                          <option>Kabid</option>
-                          <option>Kasi</option>
-                        </select>
-                      </fieldset>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="email">Email Pegawai</label>
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="basicInput"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="password">Password Pegawai</label>
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="basicInput"
-                      />
-                    </div>
-                  </div>
+
                   <div class="col-12 d-flex justify-content-end">
                     <button
                       type="submit"
@@ -574,20 +502,20 @@
         </div>
       </div>
     </div>
-    <!-- akhir form edit pegawai -->
+    <!-- akhir form edit jabatan -->
 
-    <script src="../assets/js/bootstrap.js"></script>
-    <script src="../assets/js/app.js"></script>
+    <script src="../../assets/js/bootstrap.js"></script>
+    <script src="../../assets/js/app.js"></script>
 
     <!-- Need: Apexcharts -->
-    <script src="../assets/extensions/dayjs/dayjs.min.js"></script>
-    <script src="../assets/extensions/apexcharts/apexcharts.min.js"></script>
-    <script src="../assets/js/pages/ui-apexchart.js"></script>
-    <script src="../assets/js/pages/dashboard.js"></script>
-    <script src="../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
-    <script src="../assets/extensions/toastify-js/src/toastify.js"></script>
-    <script src="../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
-    <script src="../assets/js/pages/simple-datatables.js"></script>
+    <script src="../../assets/extensions/dayjs/dayjs.min.js"></script>
+    <script src="../../assets/extensions/apexcharts/apexcharts.min.js"></script>
+    <script src="../../assets/js/pages/ui-apexchart.js"></script>
+    <script src="../../assets/js/pages/dashboard.js"></script>
+    <script src="../../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+    <script src="../../assets/extensions/toastify-js/src/toastify.js"></script>
+    <script src="../../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="../../assets/js/pages/simple-datatables.js"></script>
     <script>
       document.getElementById("alertHapus").addEventListener("click", (e) => {
         Swal.fire({
