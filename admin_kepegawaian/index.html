@@ -276,6 +276,7 @@
                   <button
                     href="#"
                     class="btn rounded-pill btn-md btn-primary mb-2"
+                    id="btnAbsenMasukPulang"
                     data-bs-toggle="modal"
                     data-bs-target="#absenmasukpulangForm"
                   >
@@ -284,6 +285,7 @@
                   <button
                     href="#"
                     class="btn rounded-pill btn-md btn-primary mb-2"
+                    id="btnAbsenMasukPulang"
                     data-bs-toggle="modal"
                     data-bs-target="#absenmasukpulangForm"
                   >
@@ -509,10 +511,7 @@
       aria-labelledby="absenmasukpulangForm"
       aria-hidden="true"
     >
-      <div
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-        role="document"
-      >
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="absenmasukpulangForm">
@@ -543,7 +542,29 @@
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label><b>Lat-Long : {-7.131313,103.133333}</b></label>
+                      <label
+                        ><b
+                          >Latitude :
+                          <input
+                            type="text"
+                            id="latitude"
+                            disabled
+                            name="latitude"
+                          /> </b
+                      ></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label
+                        ><b
+                          >Longitude :
+                          <input
+                            type="text"
+                            id="longitude"
+                            disabled
+                            name="longitude" /></b
+                      ></label>
                     </div>
                   </div>
                   <div class="col-12">
@@ -556,7 +577,11 @@
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <video autoplay playsinline></video>
+                      <video
+                        autoplay
+                        playsinline
+                        style="width: 100%; text-align: center"
+                      ></video>
                     </div>
                   </div>
                   <div class="col-12 d-flex justify-content-end">
@@ -586,10 +611,7 @@
       aria-labelledby="absenpenugasanmasukpulangForm"
       aria-hidden="true"
     >
-      <div
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-        role="document"
-      >
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="absenmasukpulangForm">
@@ -621,7 +643,11 @@
 
                   <div class="col-12">
                     <div class="form-group">
-                      <video autoplay playsinline></video>
+                      <video
+                        autoplay
+                        playsinline
+                        style="width: 100%; text-align: center"
+                      ></video>
                     </div>
                   </div>
                   <div class="col-12 d-flex justify-content-end">
@@ -804,6 +830,19 @@
         .getUserMedia(constraints)
         .then(handleSuccess)
         .catch(handleError);
+
+      var getLocation = document.getElementById("btnAbsenMasukPulang");
+
+      getLocation.addEventListener("click", function () {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          var lat = position.coords.latitude;
+          var lng = position.coords.longitude;
+
+          //Tambahkan koordinat lokasi ke form absensi
+          document.getElementById("latitude").value = lat;
+          document.getElementById("longitude").value = lng;
+        });
+      });
     </script>
   </body>
 </html>
