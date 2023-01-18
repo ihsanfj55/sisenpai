@@ -24,6 +24,11 @@
     />
     <link
       rel="stylesheet"
+      href="../assets/extensions/simple-datatables/style.css"
+    />
+    <link rel="stylesheet" href="../assets/css/pages/simple-datatables.css" />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
     />
 
@@ -180,9 +185,7 @@
                     <div class="user-menu d-flex">
                       <div class="user-name text-end me-3">
                         <h6 class="mb-0 text-gray-600">Super Admin</h6>
-                        <p class="mb-0 text-sm text-gray-600">
-                          Super admin
-                        </p>
+                        <p class="mb-0 text-sm text-gray-600">Super admin</p>
                       </div>
                       <div class="user-img d-flex align-items-center">
                         <div class="avatar avatar-md">
@@ -384,6 +387,84 @@
                         <h6 class="font-extrabold mb-0">2 Hari</h6>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Absen Harian {tanggal}</h4>
+                  </div>
+                  <div class="card-body">
+                    <table class="table table-striped" id="table1">
+                      <thead>
+                        <tr>
+                          <th>No</th>
+                          <th>Nama</th>
+                          <th>Jenis Absen</th>
+                          <th>Waktu Absen</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Agung Junus</td>
+                          <td>Absen Datang</td>
+                          <td>07:00</td>
+                          <td>
+                            <span class="badge bg-success">Tepat Waktu</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Hendra Gobel</td>
+                          <td>Absen Penugasan Datang</td>
+                          <td>10:00</td>
+                          <td>
+                            <span class="badge bg-warning">Terlambat</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Agung Junus</td>
+                          <td>Absen Pulang</td>
+                          <td>16:00</td>
+                          <td>
+                            <span class="badge bg-success">Sesuai Waktu</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Hendra Gobel</td>
+                          <td>Absen Penugasan Pulang</td>
+                          <td>14:00</td>
+                          <td>
+                            <span class="badge bg-warning">Cepat Pulang</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>Hendra Lahay</td>
+                          <td>Absen Datang</td>
+                          <td>07:00</td>
+                          <td>
+                            <span class="badge bg-success">Tepat Waktu</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>Hendra Lahay</td>
+                          <td>Absen Pulang</td>
+                          <td>16:00</td>
+                          <td>
+                            <span class="badge bg-warning">Sesuai Waktu</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -652,6 +733,8 @@
     <script src="../assets/extensions/apexcharts/apexcharts.min.js"></script>
     <script src="../assets/js/pages/ui-apexchart.js"></script>
     <script src="../assets/js/pages/dashboard.js"></script>
+    <script src="../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="../assets/js/pages/simple-datatables.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <script src="../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
