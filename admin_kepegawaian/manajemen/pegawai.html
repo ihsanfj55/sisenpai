@@ -27,7 +27,10 @@
       rel="stylesheet"
       href="../../assets/extensions/simple-datatables/style.css"
     />
-    <link rel="stylesheet" href="../../assets/css/pages/simple-datatables.css" />
+    <link
+      rel="stylesheet"
+      href="../../assets/css/pages/simple-datatables.css"
+    />
 
     <link
       rel="stylesheet"
@@ -385,14 +388,11 @@
       aria-labelledby="myModalLabel33"
       aria-hidden="true"
     >
-      <div
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-        role="document"
-      >
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="myModalLabel33">
-              Form Tambah Pegawai Baru
+              Form Edit Pegawai Baru
             </h4>
             <button
               type="button"
@@ -409,9 +409,10 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="nip">NIP Pegawai</label>
+                      <label for="nip">NIP</label>
                       <input
                         type="number"
+                        name="nip"
                         class="form-control"
                         id="basicInput"
                       />
@@ -419,53 +420,91 @@
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="nama_pegawai">Nama Pegawai</label>
-                      <input type="text" class="form-control" id="basicInput" />
+                      <label for="nama">Nama</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="basicInput"
+                        name="nama"
+                      />
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="keterangan_pengajuan">Jabatan Pegawai</label>
+                      <label for="jabatan">Jabatan</label>
                       <fieldset class="form-group">
                         <select
                           class="form-select"
                           id="basicSelect"
                           name="jabatan"
                         >
-                          <option value="" selected disabled hidden>
-                            Choose here
-                          </option>
-                          <option>Kadis</option>
-                          <option>Kabid</option>
-                          <option>Kasi</option>
+                          <option>Kepala Dinas</option>
+                          <option>Kepala Bidang Komunikasi</option>
+                          <option>Kepala Bidang Informatika</option>
                         </select>
                       </fieldset>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="email">Email Pegawai</label>
+                      <label for="Avatar" class="form-label">Foto Profil</label>
                       <input
-                        type="email"
                         class="form-control"
-                        id="basicInput"
+                        type="file"
+                        id="formFile"
+                        name="foto_profil"
                       />
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="password">Password Pegawai</label>
+                      <label for="email">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="basicInput"
+                        name="email"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="password">Password</label>
                       <input
                         type="password"
                         class="form-control"
                         id="basicInput"
+                        name="password"
                       />
                     </div>
                   </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="role">Role</label>
+                      <fieldset class="form-group">
+                        <select class="form-select" id="basicSelect">
+                          <option>Admin Kepegawaian</option>
+                          <option>Pegawai</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="status">Status</label>
+                      <fieldset class="form-group">
+                        <select class="form-select" id="basicSelect">
+                          <option>Aktif</option>
+                          <option>Tidak Aktif</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                  </div>
+
                   <div class="col-12 d-flex justify-content-end">
                     <button
                       type="submit"
-                      id="toastSuksesTambahData"
+                      id="toastSuksesEditData"
                       class="btn btn-primary me-1 mb-1"
                     >
                       Submit
@@ -489,10 +528,7 @@
       aria-labelledby="myModalLabel33"
       aria-hidden="true"
     >
-      <div
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-        role="document"
-      >
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="myModalLabel33">
@@ -513,9 +549,10 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="nip">NIP Pegawai</label>
+                      <label for="nip">NIP</label>
                       <input
                         type="number"
+                        name="nip"
                         class="form-control"
                         id="basicInput"
                       />
@@ -523,49 +560,87 @@
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="nama_pegawai">Nama Pegawai</label>
-                      <input type="text" class="form-control" id="basicInput" />
+                      <label for="nama">Nama</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="basicInput"
+                        name="nama"
+                      />
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="keterangan_pengajuan">Jabatan Pegawai</label>
+                      <label for="jabatan">Jabatan</label>
                       <fieldset class="form-group">
                         <select
                           class="form-select"
                           id="basicSelect"
                           name="jabatan"
                         >
-                          <option value="" selected disabled hidden>
-                            Choose here
-                          </option>
-                          <option>Kadis</option>
-                          <option>Kabid</option>
-                          <option>Kasi</option>
+                          <option>Kepala Dinas</option>
+                          <option>Kepala Bidang Komunikasi</option>
+                          <option>Kepala Bidang Informatika</option>
                         </select>
                       </fieldset>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="email">Email Pegawai</label>
+                      <label for="Avatar" class="form-label">Foto Profil</label>
                       <input
-                        type="email"
                         class="form-control"
-                        id="basicInput"
+                        type="file"
+                        id="formFile"
+                        name="foto_profil"
                       />
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="password">Password Pegawai</label>
+                      <label for="email">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="basicInput"
+                        name="email"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="password">Password</label>
                       <input
                         type="password"
                         class="form-control"
                         id="basicInput"
+                        name="password"
                       />
                     </div>
                   </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="role">Role</label>
+                      <fieldset class="form-group">
+                        <select class="form-select" id="basicSelect">
+                          <option>Admin Kepegawaian</option>
+                          <option>Pegawai</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="status">Status</label>
+                      <fieldset class="form-group">
+                        <select class="form-select" id="basicSelect">
+                          <option>Aktif</option>
+                          <option>Tidak Aktif</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                  </div>
+
                   <div class="col-12 d-flex justify-content-end">
                     <button
                       type="submit"
