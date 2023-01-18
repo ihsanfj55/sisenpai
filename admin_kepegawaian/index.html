@@ -27,6 +27,20 @@
       href="../assets/extensions/simple-datatables/style.css"
     />
     <link rel="stylesheet" href="../assets/css/pages/simple-datatables.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/extensions/sweetalert2/sweetalert2.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/extensions/toastify-js/src/toastify.css"
+    />
   </head>
 
   <body>
@@ -220,6 +234,80 @@
           <div class="page-heading">
             <div class="page-title">
               <div class="row">
+                <div class="col-6 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-body px-3 py-3">
+                      <div class="row">
+                        <h6 class="text-muted font-semibold text-center">
+                          Absen Masuk
+                        </h6>
+                        <h5 class="font-extrabold mb-0 text-center">
+                          08:01:00
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-body px-3 py-3">
+                      <div class="row">
+                        <h6 class="text-muted font-semibold text-center">
+                          Absen Pulang
+                        </h6>
+                        <h5 class="font-extrabold mb-0 text-center">
+                          Belum Absen
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-xl-12 col-md-12 col-sm-12">
+                  <button
+                    href="#"
+                    class="btn rounded-pill btn-md btn-primary mb-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#absenmasukpulangForm"
+                  >
+                    Absen Masuk
+                  </button>
+                  <button
+                    href="#"
+                    class="btn rounded-pill btn-md btn-primary mb-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#absenmasukpulangForm"
+                  >
+                    Absen Pulang
+                  </button>
+                  <button
+                    href="#"
+                    class="btn rounded-pill btn-ms btn-secondary mb-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#absenpenugasanmasukpulangForm"
+                  >
+                    Penugasan Masuk
+                  </button>
+                  <button
+                    href="#"
+                    class="btn rounded-pill btn-ms btn-secondary mb-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#absenpenugasanmasukpulangForm"
+                  >
+                    Penugasan Pulang
+                  </button>
+                  <button
+                    href="#"
+                    class="btn rounded-pill btn-md btn-warning mb-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#buatpengajuanForm"
+                  >
+                    Pengajuan
+                  </button>
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                   <h4>Info Absensi {Bulan Tahun}</h4>
                 </div>
@@ -403,8 +491,259 @@
         </div>
       </div>
     </div>
+
+    <!--awal modal Absen Masuk & Pulang -->
+    <div
+      class="modal fade text-left"
+      id="absenmasukpulangForm"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="absenmasukpulangForm"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="absenmasukpulangForm">
+              Absen {Masuk/Pulang}
+            </h4>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i data-feather="x"></i>
+            </button>
+          </div>
+          <form action="#" class="form form-vertical">
+            <div class="modal-body">
+              <div class="form-body">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label><b>Tanggal Absen : {13 Maret 2023}</b></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label><b>Jam Absen : {08:00:33}</b></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label><b>Lat-Long : {-7.131313,103.133333}</b></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <p class="text-center">
+                      <code
+                        >{Anda tidak dalam lokasi absen/ Anda berada dilokasi
+                        absen}</code
+                      >
+                    </p>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <video autoplay playsinline></video>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button
+                      type="submit"
+                      id="alertAbsen"
+                      class="btn icon icon-left btn-primary me-1 mb-1"
+                    >
+                      <i class="icon dripicons dripicons-camera"></i> Absen
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- akhir modal Absen Masuk & Pulang -->
+
+    <!--awal modal Absen Penugasan Masuk & Pulang -->
+    <div
+      class="modal fade text-left"
+      id="absenpenugasanmasukpulangForm"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="absenpenugasanmasukpulangForm"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="absenmasukpulangForm">
+              Absen Penugasan {Masuk/Pulang}
+            </h4>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i data-feather="x"></i>
+            </button>
+          </div>
+          <form action="#" class="form form-vertical">
+            <div class="modal-body">
+              <div class="form-body">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label><b>Tanggal Absen : {13 Maret 2023}</b></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label><b>Jam Absen : {08:00:33}</b></label>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-group">
+                      <video autoplay playsinline></video>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button
+                      type="submit"
+                      id="alertAbsen"
+                      class="btn icon icon-left btn-primary me-1 mb-1"
+                    >
+                      <i class="icon dripicons dripicons-camera"></i> Absen
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- akhir modal Absen Penugasan Masuk & Pulang -->
+
+    <!-- awal modal form pengajuan  -->
+    <div
+      class="modal fade text-left"
+      id="buatpengajuanForm"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="buatpengajuanForm"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel33">Form Buat Pengajuan</h4>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i data-feather="x"></i>
+            </button>
+          </div>
+          <form action="#" class="form form-vertical">
+            <div class="modal-body">
+              <div class="form-body">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="jenis_pengajuan">Jenis Pengajuan</label>
+                      <fieldset class="form-group">
+                        <select class="form-select" id="select_jenis_pengajuan">
+                          <option>Sakit</option>
+                          <option>Izin</option>
+                          <option>Cuti</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="keterangan_pengajuan"
+                        >Keterangan Pengajuan</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="text_area_keterangan_pengajuan"
+                        rows="3"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="file_pengajuan">Surat Pengajuan</label>
+                      <input
+                        class="form-control"
+                        type="file"
+                        id="form_file_pengajuan"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="tanggal_awal_pengajuan"
+                        >Tanggal Awal Pengajuan</label
+                      >
+                      <input
+                        type="text"
+                        id="tngl_pengajuan_awal"
+                        class="form-control"
+                        name="tanggal_awal_pengajuan"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="tanggal_akhir_pengajuan"
+                        >Tanggal Akhir Pengajuan</label
+                      >
+                      <input
+                        type="text"
+                        id="tngl_pengajuan_akhir"
+                        class="form-control"
+                        name="tanggal_akhir_pengajuan"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button
+                      type="submit"
+                      id="toastSuksesTambahData"
+                      class="btn btn-primary me-1 mb-1"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- akhir modal form pengajuan  -->
     <script src="../assets/js/bootstrap.js"></script>
     <script src="../assets/js/app.js"></script>
+
+    <script src="../assets/extensions/jquery/jquery.min.js"></script>
 
     <!-- Need: Apexcharts -->
     <script src="../assets/extensions/dayjs/dayjs.min.js"></script>
@@ -413,5 +752,50 @@
     <script src="../assets/js/pages/dashboard.js"></script>
     <script src="../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
     <script src="../assets/js/pages/simple-datatables.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+    <script src="../assets/extensions/toastify-js/src/toastify.js"></script>
+    <script>
+      $("#tngl_pengajuan_awal").datepicker({
+        format: "dd-mm-yyyy",
+      });
+      $("#tngl_pengajuan_akhir").datepicker({
+        format: "dd-mm-yyyy",
+      });
+
+      document
+        .getElementById("toastSuksesTambahData")
+        .addEventListener("click", () => {
+          Toastify({
+            text: "Sukses Buat Pengajuan",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#4fbe87",
+          }).showToast();
+        });
+      var constraints = {
+        video: true,
+      };
+
+      var video = document.querySelector("video");
+
+      function handleSuccess(stream) {
+        window.stream = stream; // only to make stream available to console
+        video.srcObject = stream;
+      }
+
+      function handleError(error) {
+        console.log("getUserMedia error: ", error);
+      }
+
+      navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then(handleSuccess)
+        .catch(handleError);
+    </script>
   </body>
 </html>
