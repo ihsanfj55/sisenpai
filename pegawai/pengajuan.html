@@ -246,31 +246,42 @@
             <section class="section">
               <div class="card">
                 <div class="card-header">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <h6>Filter Jenis</h6>
-                      <fieldset class="form-group">
-                        <select
-                          class="form-select"
-                          id="basicSelect"
-                          name="filter_status"
-                        >
-                          <option>Izin</option>
-                          <option>Cuti</option>
-                          <option>Sakit</option>
-                        </select>
-                      </fieldset>
+                  <form action="#" class="form form-vertical">
+                    <div class="form-body">
+                      <div class="row">
+                        <div class="col-4">
+                          <h6>Filter Jenis</h6>
+                          <fieldset class="form-group">
+                            <select
+                              class="form-select"
+                              id="basicSelect"
+                              name="filter_status"
+                            >
+                              <option>Izin</option>
+                              <option>Cuti</option>
+                              <option>Sakit</option>
+                            </select>
+                          </fieldset>
+                        </div>
+                        <div class="col-4">
+                          <h6>Filter Tanggal</h6>
+                          <input
+                            type="text"
+                            id="tngl_filter"
+                            class="form-control"
+                            name="tanggal_awal_pengajuan"
+                          />
+                        </div>
+                        <div class="col-4 align-self-end mb-2">
+                          <button
+                            type="submit"
+                            id="toastSuksesEditData"
+                            class="btn btn-primary me-1 mb-1"
+                          >Submit Filter</button>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-md-4">
-                      <h6>Filter Tanggal</h6>
-                      <input
-                        type="text"
-                        id="tngl_filter"
-                        class="form-control"
-                        name="tanggal_awal_pengajuan"
-                      />
-                    </div>
-                  </div>
+                  </form>
                 </div>
                 <div class="card-body">
                   <table class="table table-striped" id="table1">
