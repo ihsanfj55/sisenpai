@@ -263,7 +263,7 @@
                     <div class="card">
                       <div class="card-header">
                         <div class="row">
-                          <div class="col-md-4">
+                          <div class="col-md-3 align-self-end">
                             <a
                               href="#"
                               class="btn btn-md btn-primary"
@@ -272,23 +272,39 @@
                               >Cetak Laporan</a
                             >
                           </div>
-                          <div class="col-md-4">
-                            <h6>Filter Tanggal Awal</h6>
-                            <input
-                              type="text"
-                              id="tanggal_filter_awal"
-                              class="form-control"
-                              name="tanggal_filter_awal"
-                            />
-                          </div>
-                          <div class="col-md-4">
-                            <h6>Filter Tanggal Akhir</h6>
-                            <input
-                              type="text"
-                              id="tanggal_filter_akhir"
-                              class="form-control"
-                              name="tanggal_filter_akhir"
-                            />
+                          <div class="col-md-9 d-flex flex-row-reverse">
+                            <form action="#" class="form form-vertical">
+                              <div class="form-body">
+                                <div class="row">
+                                  <div class="col-md-4 mt-1 ">
+                                    <h6>Filter Tanggal Awal</h6>
+                                    <input
+                                      type="text"
+                                      id="tanggal_filter_awal"
+                                      class="form-control"
+                                      name="tanggal_filter_awal"
+                                    />
+                                  </div>
+                                  <div class="col-md-4 mt-1">
+                                    <h6>Filter Tanggal Akhir</h6>
+                                    <input
+                                      type="text"
+                                      id="tanggal_filter_akhir"
+                                      class="form-control"
+                                      name="tanggal_filter_akhir"
+                                    />
+                                  </div>
+                                  <div class="col-md-4 align-self-end mt-2">
+                                    <button
+                                      type="submit"
+                                      class="btn btn-primary me-1"
+                                    >
+                                      Submit Filter
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
                           </div>
                         </div>
                       </div>
