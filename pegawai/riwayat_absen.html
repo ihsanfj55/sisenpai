@@ -238,15 +238,49 @@
                 <div class="col-12">
                   <div class="card">
                     <div class="card-header">
-                      <div class="col-md-4">
-                        <h6>Filter Bulan & Tahun</h6>
-                        <input
-                          type="text"
-                          id="filter_bulan_tahun"
-                          class="form-control"
-                          name="filter_bulan_tahun"
-                        />
-                      </div>
+                      <form action="#" class="form form-vertical">
+                        <div class="form-body">
+                          <div class="row">
+                            <div class="col-4">
+                              <h6>Filter Bulan</h6>
+                              <fieldset class="form-group">
+                                <select
+                                  class="form-select"
+                                  id="basicSelect"
+                                  name="filter_bulan"
+                                >
+                                  <option>Januari</option>
+                                  <option>Februari</option>
+                                  <option>Maret</option>
+                                </select>
+                              </fieldset>
+                            </div>
+                            <div class="col-4">
+                              <h6>Filter Tahun</h6>
+                              <fieldset class="form-group">
+                                <select
+                                  class="form-select"
+                                  id="basicSelect"
+                                  name="filter_tahun"
+                                >
+                                  <option>2022</option>
+                                  <option>2023</option>
+                                  <option>2024</option>
+                                </select>
+                              </fieldset>
+                            </div>
+                            <div class="col-4 align-self-end mb-2">
+                              <button
+                                type="submit"
+                                id="toastSuksesEditData"
+                                class="btn btn-primary me-1 mb-1"
+                              >
+                                Submit Filter
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
                     </div>
                     <div class="card-body">
                       <table class="table table-striped" id="table1">
@@ -356,12 +390,5 @@
     <script src="../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
     <script src="../assets/js/pages/simple-datatables.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-    <script>
-      $("#filter_bulan_tahun").datepicker({
-        format: "mm-yyyy",
-        viewMode: "months",
-        minViewMode: "months",
-      });
-    </script>
   </body>
 </html>
