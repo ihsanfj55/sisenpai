@@ -263,37 +263,55 @@
                     <div class="card">
                       <div class="card-header">
                         <div class="row">
-                          <div class="col-md-4">
+                          <div class="col-md-3 align-self-end">
                             <a
                               href="#"
-                              class="btn btn-md btn-primary mb-3"
+                              class="btn btn-md btn-primary"
                               data-bs-toggle="modal"
                               data-bs-target="#laporanpengajuanForm"
                               >Cetak Laporan</a
                             >
                           </div>
-                          <div class="col-md-4">
-                            <h6>Filter Jenis</h6>
-                            <fieldset class="form-group">
-                              <select
-                                class="form-select"
-                                id="basicSelect"
-                                name="filter_status"
-                              >
-                                <option>Izin</option>
-                                <option>Cuti</option>
-                                <option>Sakit</option>
-                              </select>
-                            </fieldset>
-                          </div>
-                          <div class="col-md-4">
-                            <h6>Filter Tanggal</h6>
-                            <input
-                              type="text"
-                              id="tngl_filter"
-                              class="form-control"
-                              name="tanggal_awal_pengajuan"
-                            />
+                          <div class="col-md-9 d-flex flex-row-reverse">
+                            <form action="#" class="form form-vertical">
+                              <div class="form-body">
+                                <div class="row">
+                                  <div class="col-md-4 mt-1">
+                                    <h6>Filter Jenis</h6>
+                                    <fieldset class="form-group">
+                                      <select
+                                        class="form-select"
+                                        id="basicSelect"
+                                        name="filter_status"
+                                      >
+                                        <option>Izin</option>
+                                        <option>Cuti</option>
+                                        <option>Sakit</option>
+                                      </select>
+                                    </fieldset>
+                                  </div>
+                                  <div class="col-md-4 mt-1">
+                                    <h6>Filter Tanggal</h6>
+                                    <input
+                                      type="text"
+                                      id="tngl_filter"
+                                      class="form-control"
+                                      name="tanggal_awal_pengajuan"
+                                    />
+                                  </div>
+                                  <div
+                                    class="col-md-4 align-self-end mt-1 mb-2"
+                                  >
+                                    <button
+                                      type="submit"
+                                      class="btn btn-primary me-1"
+                                    >
+                                      Submit Filter
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
                           </div>
                         </div>
                       </div>
